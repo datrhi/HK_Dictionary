@@ -1,10 +1,12 @@
 /**
- *   Dictionary Version 1
- *
+ *   Dictionary Version 2
+ *   Nhap tu file
  *   Dang Trung Hieu & Ngo Minh Khanh
  */
 
 package Dictionary;
+
+import java.io.IOException;
 
 public class DictionaryCommandline {
 
@@ -15,6 +17,11 @@ public class DictionaryCommandline {
         dm.insert_form_commandline(d);
     }
 
+    public void insert_file() throws IOException {
+        DictionaryManagement dm = new DictionaryManagement();
+        dm.insert_from_file(d);
+    }
+
     public void show_all_words() {
 
         System.out.println("-----------------------------------------\n");
@@ -23,13 +30,13 @@ public class DictionaryCommandline {
         }
     }
 
-    public  void dictionary_basic() {
+    public  void dictionary_basic() throws IOException {
         DictionaryCommandline dc = new DictionaryCommandline();
-        dc.insert_word();
+        dc.insert_file();
         dc.show_all_words();
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
         DictionaryCommandline dcl = new DictionaryCommandline();
         dcl.dictionary_basic();
     }
