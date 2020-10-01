@@ -32,8 +32,18 @@ public class Word {
         return word_target;
     }
 
-    public String get_Word_explain() {
+    public String get_word_explain() {
         return word_explain;
     }
 
+    public Word get_word() {
+        return this;
+    }
+
+    public boolean equals (Word w) {
+        if(this.get_word_target().equals(w.word_target)) {
+            return true;
+        }
+        return false;
+    }
 }

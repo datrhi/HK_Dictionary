@@ -1,5 +1,5 @@
-hello	xin chao
-bye	tam biet
-run	chay
-jump	nhay
-computer	may tinh
+hello xin chao
+bye tam biet
+run chay
+jump nhay
+computer may tinh
