@@ -1,6 +1,6 @@
 /**
  *   Dictionary Version 2
- *   Nhap tu file
+ *   Nhap tu file & tìm tu
  *   Dang Trung Hieu & Ngo Minh Khanh
  */
 
@@ -61,7 +61,6 @@ public class DictionaryCommandline {
         dc.insert_file();
         dc.show_all_words();
         dc.find_word();
-
     }
 
     public static void main(String[] args) throws IOException {

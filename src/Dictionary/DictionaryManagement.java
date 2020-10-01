@@ -37,7 +37,6 @@ public class DictionaryManagement {
 
     public void insert_from_file(Dictionary d) throws IOException {
 
-        //File file = new File("dictionaries.txt");
         Scanner read_file = new Scanner(Paths.get("C:\\Users\\Admin\\Documents\\uetdic\\dictionaries.txt"), "UTF-8");
 
         while (read_file.hasNextLine()) {
@@ -58,10 +57,6 @@ public class DictionaryManagement {
 
     /**
      *
-     * @param d
-     * @return 1: Dictionary is empty
-     *         2: Có
-     *         3: Not found
      */
     public String dictionnary_lookup(Dictionary d, Word word) {
         //int s;
@@ -69,7 +64,7 @@ public class DictionaryManagement {
         if (d.getDictionary().size() == 0) {
             return " Dictionary is empty!";
         }
-        for (int i = 0; i < d.getDictionary().size() - 1; i++) {
+        for (int i = 0; i < d.getDictionary().size(); i++) {
             if (d.getDictionary().get(i).get_word_target().equals(word.get_word_target()) == true) {
                 word.set_word_explain( d.getDictionary().get(i).get_word_explain() );
                 return d.getDictionary().get(i).get_word_explain();
