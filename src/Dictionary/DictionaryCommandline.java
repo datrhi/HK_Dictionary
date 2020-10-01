@@ -19,38 +19,35 @@ public class DictionaryCommandline {
 
     public void findWord() {
         DictionaryManagement dm = new DictionaryManagement();
-
-        Word w = new Word();
-        System.out.print(" Find word: ");
-        Scanner sc = new Scanner(System.in);
-        String findWord = sc.nextLine();
-        w.setWordTarget(findWord);
-
-        String result = dm.dictionaryLookup(dictionary,w);
-        if( (!result.equals(" Dictionary is empty!")) && (!result.equals(" Not found!")) ) {
-            System.out.println(" English: " + w.getWordTarget() + " - Vietnamese: " + result);
+        Word result = dm.dictionaryLookup(dictionary);
+        if( (!result.getWordExplain().equals(" Dictionary is empty!")) && (!result.getWordExplain().equals(" Not found!")) ) {
+            showWord(result);
         }
         else {
-            System.out.println(result);
+            System.out.println(result.getWordExplain());
         }
 
+    }
+    public void showWord(Word word) {
+        System.out.println(" English: " + word.getWordTarget() + " - Vietnamese: " + word.getWordExplain() );
     }
 
     public void showAllWords() {
 
         System.out.println("-----------------------------------------\n");
         for(int i = 0; i < dictionary.getDictionary().size(); i++) {
-            System.out.println("No " + (i+1) + "      Enlish: " + dictionary.getDictionary().get(i).getWordTarget() + "     Vietnamese: " + dictionary.getDictionary().get(i).getWordExplain() );
+            System.out.print("No " + (i+1) );
+            showWord(dictionary.getDictionary().get(i)) ;
         }
     }
 
-    public  void dictionaryBasic() {
+    public void dictionaryBasic() {
         DictionaryCommandline dc = new DictionaryCommandline();
         dc.insertFromCommandline();
         dc.showAllWords();
     }
 
-    public void dictionary_advanced() throws IOException {
+    public void dictionaryAdvanced() throws IOException {
         DictionaryCommandline dc = new DictionaryCommandline();
         dc.insertFromFile();
         dc.showAllWords();
@@ -59,6 +56,6 @@ public class DictionaryCommandline {
 
     public static void main(String[] args) throws IOException {
         DictionaryCommandline dcl = new DictionaryCommandline();
-        dcl.dictionary_advanced();
+        dcl.dictionaryAdvanced();
     }
 }

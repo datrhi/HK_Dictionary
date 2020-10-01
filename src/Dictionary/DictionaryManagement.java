@@ -57,19 +57,25 @@ public class DictionaryManagement {
     /**
      *
      */
-    public String dictionaryLookup(Dictionary dictionary, Word word) {
-        //int s;
+    public Word dictionaryLookup(Dictionary dictionary) {
+        Word word = new Word();
+        System.out.print(" Find word: ");
+        Scanner sc = new Scanner(System.in);
+        String findWord = sc.nextLine();
+        word.setWordTarget(findWord);
 
         if (dictionary.getDictionary().size() == 0) {
-            return " Dictionary is empty!";
+            word.setWordExplain(" Dictionary is empty!");
+            return word;
         }
         for (int i = 0; i < dictionary.getDictionary().size(); i++) {
             if (dictionary.getDictionary().get(i).getWordTarget().equals(word.getWordTarget())) {
                 word.setWordExplain( dictionary.getDictionary().get(i).getWordExplain() );
-                return dictionary.getDictionary().get(i).getWordExplain();
+                return word;
             }
         }
-        return " Not found!";
+        word.setWordExplain(" Not found!");
+        return word;
     }
 
 }
