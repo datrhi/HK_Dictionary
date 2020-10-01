@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class DictionaryManagement {
 
-    public void insert_form_commandline(Dictionary d) {
+    public void insertFromCommandline(Dictionary dictionary) {
 
         Scanner sc = new Scanner(System.in);
         System.out.print(" So tu can nhap: ");
@@ -22,35 +22,34 @@ public class DictionaryManagement {
             System.out.print("\n Nhap tu moi " + (i + 1) + ": ");
             String word_target = sc.nextLine();
             //sc.nextLine();
-            w.set_word_target(word_target);
+            w.setWordTarget(word_target);
 
             System.out.print(" Nhap giai nghia " + (i + 1) + ": ");
             String word_explain = sc.nextLine();
             //sc.nextLine();
-            w.set_word_explain(word_explain);
+            w.setWordExplain(word_explain);
 
-            ArrayList<Word> newDic = d.getDictionary();
+            ArrayList<Word> newDic = dictionary.getDictionary();
             newDic.add(w);
-            d.setDictionary(newDic);
+            dictionary.setDictionary(newDic);
         }
     }
 
-    public void insert_from_file(Dictionary d) throws IOException {
+    public void insertFromFile(Dictionary dictionary) throws IOException {
 
         Scanner read_file = new Scanner(Paths.get("C:\\Users\\Admin\\Documents\\uetdic\\dictionaries.txt"), "UTF-8");
-
         while (read_file.hasNextLine()) {
             Word w = new Word();
 
             String word_target = read_file.next();
-            w.set_word_target(word_target);
+            w.setWordTarget(word_target);
 
             String word_explain = read_file.nextLine();
-            w.set_word_explain(word_explain);
+            w.setWordExplain(word_explain);
 
-            ArrayList<Word> newDic = d.getDictionary();
+            ArrayList<Word> newDic = dictionary.getDictionary();
             newDic.add(w);
-            d.setDictionary(newDic);
+            dictionary.setDictionary(newDic);
         }
         read_file.close();
     }
@@ -58,16 +57,16 @@ public class DictionaryManagement {
     /**
      *
      */
-    public String dictionnary_lookup(Dictionary d, Word word) {
+    public String dictionaryLookup(Dictionary dictionary, Word word) {
         //int s;
 
-        if (d.getDictionary().size() == 0) {
+        if (dictionary.getDictionary().size() == 0) {
             return " Dictionary is empty!";
         }
-        for (int i = 0; i < d.getDictionary().size(); i++) {
-            if (d.getDictionary().get(i).get_word_target().equals(word.get_word_target()) == true) {
-                word.set_word_explain( d.getDictionary().get(i).get_word_explain() );
-                return d.getDictionary().get(i).get_word_explain();
+        for (int i = 0; i < dictionary.getDictionary().size(); i++) {
+            if (dictionary.getDictionary().get(i).getWordTarget().equals(word.getWordTarget())) {
+                word.setWordExplain( dictionary.getDictionary().get(i).getWordExplain() );
+                return dictionary.getDictionary().get(i).getWordExplain();
             }
         }
         return " Not found!";

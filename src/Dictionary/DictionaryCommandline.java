@@ -1,9 +1,3 @@
-/**
- *   Dictionary Version 2
- *   Nhap tu file & tìm tu
- *   Dang Trung Hieu & Ngo Minh Khanh
- */
-
 package Dictionary;
 
 import java.io.IOException;
@@ -11,30 +5,30 @@ import java.util.Scanner;
 
 public class DictionaryCommandline {
 
-    private Dictionary d = new Dictionary();
+    private final Dictionary dictionary = new Dictionary();
 
-    public void insert_word() {
+    public void insertFromCommandline() {
         DictionaryManagement dm = new DictionaryManagement();
-        dm.insert_form_commandline(d);
+        dm.insertFromCommandline(dictionary);
     }
 
-    public void insert_file() throws IOException {
+    public void insertFromFile() throws IOException {
         DictionaryManagement dm = new DictionaryManagement();
-        dm.insert_from_file(d);
+        dm.insertFromFile(dictionary);
     }
 
-    public void find_word() {
+    public void findWord() {
         DictionaryManagement dm = new DictionaryManagement();
 
         Word w = new Word();
         System.out.print(" Find word: ");
         Scanner sc = new Scanner(System.in);
-        String find_word = sc.nextLine();
-        w.set_word_target(find_word);
+        String findWord = sc.nextLine();
+        w.setWordTarget(findWord);
 
-        String result = dm.dictionnary_lookup(d,w);
-        if( (result.equals(" Dictionary is empty!") == false) && (result.equals(" Not found!") == false) ) {
-            System.out.println(" English: " + w.get_word_target() + " - Vietnamese: " + result);
+        String result = dm.dictionaryLookup(dictionary,w);
+        if( (!result.equals(" Dictionary is empty!")) && (!result.equals(" Not found!")) ) {
+            System.out.println(" English: " + w.getWordTarget() + " - Vietnamese: " + result);
         }
         else {
             System.out.println(result);
@@ -42,25 +36,25 @@ public class DictionaryCommandline {
 
     }
 
-    public void show_all_words() {
+    public void showAllWords() {
 
         System.out.println("-----------------------------------------\n");
-        for(int i = 0; i < d.getDictionary().size(); i++) {
-            System.out.println("No " + (i+1) + "      Enlish: " + d.getDictionary().get(i).get_word_target() + "     Vietnamese: " + d.getDictionary().get(i).get_word_explain() );
+        for(int i = 0; i < dictionary.getDictionary().size(); i++) {
+            System.out.println("No " + (i+1) + "      Enlish: " + dictionary.getDictionary().get(i).getWordTarget() + "     Vietnamese: " + dictionary.getDictionary().get(i).getWordExplain() );
         }
     }
 
-    public  void dictionary_basic() {
+    public  void dictionaryBasic() {
         DictionaryCommandline dc = new DictionaryCommandline();
-        dc.insert_word();
-        dc.show_all_words();
+        dc.insertFromCommandline();
+        dc.showAllWords();
     }
 
     public void dictionary_advanced() throws IOException {
         DictionaryCommandline dc = new DictionaryCommandline();
-        dc.insert_file();
-        dc.show_all_words();
-        dc.find_word();
+        dc.insertFromFile();
+        dc.showAllWords();
+        dc.findWord();
     }
 
     public static void main(String[] args) throws IOException {
