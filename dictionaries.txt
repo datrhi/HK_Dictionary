@@ -3,3 +3,4 @@ bye tam biet
 run chay
 jump nhay
 computer may tinh
+book sach

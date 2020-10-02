@@ -1,0 +1,5 @@
+hello       xin chao
+bye         tam biet
+jump        nhay
+computer    may tinh
+book        sach

@@ -1,6 +1,8 @@
 package Dictionary;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
 public class DictionaryCommandline {
@@ -19,25 +21,28 @@ public class DictionaryCommandline {
 
     public void findWord() {
         DictionaryManagement dm = new DictionaryManagement();
-        Word result = dm.dictionaryLookup(dictionary);
-        if( (!result.getWordExplain().equals(" Dictionary is empty!")) && (!result.getWordExplain().equals(" Not found!")) ) {
-            showWord(result);
-        }
-        else {
-            System.out.println(result.getWordExplain());
-        }
-
+        dm.dictionaryLookup(dictionary);
     }
-    public void showWord(Word word) {
-        System.out.println(" English: " + word.getWordTarget() + " - Vietnamese: " + word.getWordExplain() );
+
+    public void dictionaryRemove() {
+        DictionaryManagement dm = new DictionaryManagement();
+        dm.dictionaryRemove(dictionary);
+    }
+
+    public void dictionaryExportToFile() throws FileNotFoundException, UnsupportedEncodingException {
+        DictionaryManagement dm = new DictionaryManagement();
+        dm.dictionaryExportToFile(dictionary);
+    }
+
+    public void dictionarySearcher() {
+
     }
 
     public void showAllWords() {
-
-        System.out.println("-----------------------------------------\n");
+        System.out.printf("%-5s%-12s%s\n","No","English  |","Vietnamese");
         for(int i = 0; i < dictionary.getDictionary().size(); i++) {
-            System.out.print("No " + (i+1) );
-            showWord(dictionary.getDictionary().get(i)) ;
+            System.out.printf("%-5d%-11s%s\n",(i+1),dictionary.getDictionary().get(i).getWordTarget(),
+                    dictionary.getDictionary().get(i).getWordExplain());
         }
     }
 
@@ -52,6 +57,9 @@ public class DictionaryCommandline {
         dc.insertFromFile();
         dc.showAllWords();
         dc.findWord();
+        dc.dictionaryRemove();
+        dc.showAllWords();
+        dc.dictionaryExportToFile();
     }
 
     public static void main(String[] args) throws IOException {
