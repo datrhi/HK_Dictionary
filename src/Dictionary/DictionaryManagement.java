@@ -1,16 +1,13 @@
 package Dictionary;
 
-import java.io.FileNotFoundException;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.nio.file.Paths;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 public class DictionaryManagement {
 
-    public void insertFromCommandline(Dictionary dictionary) {
+    public void insert_from_commandline(Dictionary d) {
 
         Scanner sc = new Scanner(System.in);
         System.out.print(" So tu can nhap: ");
@@ -25,83 +22,60 @@ public class DictionaryManagement {
             System.out.print("\n Nhap tu moi " + (i + 1) + ": ");
             String word_target = sc.nextLine();
             //sc.nextLine();
-            w.setWordTarget(word_target);
+            w.set_word_target(word_target);
 
             System.out.print(" Nhap giai nghia " + (i + 1) + ": ");
             String word_explain = sc.nextLine();
             //sc.nextLine();
-            w.setWordExplain(word_explain);
+            w.set_word_explain(word_explain);
 
-            ArrayList<Word> newDic = dictionary.getDictionary();
+            ArrayList<Word> newDic = d.getDictionary();
             newDic.add(w);
-            dictionary.setDictionary(newDic);
+            d.setDictionary(newDic);
         }
     }
 
-    public void insertFromFile(Dictionary dictionary) throws IOException {
+    public void insert_from_file(Dictionary d) throws IOException {
 
-        Scanner read_file = new Scanner(Paths.get("C:\\Users\\Admin\\Documents\\uetdic\\dictionaries.txt"), "UTF-8");
+        //File file = new File("dictionaries.txt");
+        Scanner read_file = new Scanner(Paths.get("C:\\Users\\TNC\\Desktop\\uetdic-master\\uetdic-master\\dictionaries.txt"), "UTF-8");
+
         while (read_file.hasNextLine()) {
             Word w = new Word();
 
             String word_target = read_file.next();
-            w.setWordTarget(word_target);
+            w.set_word_target(word_target);
 
             String word_explain = read_file.nextLine();
-            w.setWordExplain(word_explain);
+            w.set_word_explain(word_explain);
 
-            ArrayList<Word> newDic = dictionary.getDictionary();
+            ArrayList<Word> newDic = d.getDictionary();
             newDic.add(w);
-            dictionary.setDictionary(newDic);
+            d.setDictionary(newDic);
         }
         read_file.close();
     }
 
     /**
      *
+     * @param d
+     * @return 1: Dictionary is empty
+     *         2: Có
+     *         3: Not found
      */
-    public void dictionaryLookup(Dictionary dictionary) {
+    public String dictionnary_lookup(Dictionary d, Word word) {
+        //int s;
 
-        System.out.print(" Find word: ");
-        Scanner sc = new Scanner(System.in);
-        String findWord = sc.nextLine();
-        //sc.close();
-
-        if (dictionary.getDictionary().size() == 0) {
-            System.out.println(" Dictionary is empty!");
-            return;
+        if (d.getDictionary().size() == 0) {
+            return " Dictionary is empty!";
         }
-        for (int i = 0; i < dictionary.getDictionary().size(); i++) {
-            if (dictionary.getDictionary().get(i).getWordTarget().equals(findWord)) {
-                System.out.printf("%-12s%s\n","English  |","Vietnamese");
-                System.out.printf("%-11s%s\n",findWord,dictionary.getDictionary().get(i).getWordExplain());
-                return;
+        for (int i = 0; i < d.getDictionary().size() - 1; i++) {
+            if (d.getDictionary().get(i).get_word_target().equals(word.get_word_target()) == true) {
+                word.set_word_explain( d.getDictionary().get(i).get_word_explain() );
+                return d.getDictionary().get(i).get_word_explain();
             }
         }
-        System.out.println(" Not found!");
-        return;
+        return " Not found!";
     }
 
-    public void dictionaryRemove(Dictionary dictionary) {
-        System.out.print(" Nhap tu muon xoa: ");
-        Scanner sc = new Scanner(System.in);
-        String removedWord = sc.nextLine();
-
-        for(int i = 0; i < dictionary.getDictionary().size(); i++) {
-            if(dictionary.getDictionary().get(i).getWordTarget().equals(removedWord)) {
-                dictionary.getDictionary().remove(i);
-            }
-        }
-        return;
-    }
-
-
-    public void dictionaryExportToFile(Dictionary dictionary) throws FileNotFoundException, UnsupportedEncodingException {
-        PrintWriter printWriter = new PrintWriter("dictionaris(copy).txt", "UTF-8");
-        for (int i = 0; i < dictionary.getDictionary().size(); i++) {
-            printWriter.printf("%-11s%s\n",dictionary.getDictionary().get(i).getWordTarget(),
-                    dictionary.getDictionary().get(i).getWordExplain());
-        }
-        printWriter.close();
-    }
 }
