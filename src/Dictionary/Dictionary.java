@@ -1,18 +1,25 @@
 package Dictionary;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class Dictionary {
+public class Dictionary extends DictionaryManagement {
 
-    private ArrayList<Word> Dictionary = new ArrayList<Word>();
+    private ArrayList<Word> dictionary = new ArrayList<Word>();
+
+    /*
+    Dictionary() {
+        super(dictionary);
+    }
+    */
 
     public void setDictionary(ArrayList<Word> dictionary) {
-        Dictionary = dictionary;
+        this.dictionary = dictionary;
     }
 
     public ArrayList<Word> getDictionary() {
-        return Dictionary;
+        return dictionary;
     }
+
+    // public void add
 
 }
