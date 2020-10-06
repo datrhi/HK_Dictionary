@@ -7,6 +7,20 @@ public class DictionaryCommandline {
 
     private Dictionary dictionary = new Dictionary();
 
+    /**
+     *   Ham showAllWords duoc cho vao trong class DictionaryManagement
+     */
+
+    /*
+    public void showAllWords() {
+        System.out.printf("%-5s%-12s%s\n","No","English  |","Vietnamese");
+        for(int i = 0; i < dictionary.getDictionary().size(); i++) {
+            System.out.printf("%-5d%-11s%s\n",(i+1),dictionary.getDictionary().get(i).getWordTarget(),
+                    dictionary.getDictionary().get(i).getWordExplain());
+        }
+    }
+     */
+
     public void dictionarySearcher() {
         Dictionary newDic = new Dictionary();
         System.out.print(" Nhap cac chu cai tu can tim: ");

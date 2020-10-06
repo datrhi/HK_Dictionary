@@ -36,15 +36,6 @@ public class Word implements Comparable<Word>{
         return word_explain;
     }
 
-    /*
-    @Override
-    public int compareTo(Word word) {
-        // sort student's name by ASC
-        return this.getWordTarget().compareTo(word.getWordTarget());
-    }
-
-     */
-
     @Override
     public int compareTo(Word word) {
         return this.getWordTarget().compareToIgnoreCase(word.getWordTarget());

@@ -1,30 +1,18 @@
 package Dictionary;
 
-import java.io.FileNotFoundException;
-import java.io.UnsupportedEncodingException;
+//import java.io.FileNotFoundException;
+//import java.io.UnsupportedEncodingException;
+//import java.io.IOException;
+//import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
 import java.nio.file.Paths;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
+
 
 public class DictionaryManagement {
 
-
-    //protected Dictionary dictionary = new Dictionary();
-
-    /*
-    public DictionaryManagement(){
-        this.dictionary = dictionary;
-    }
-
-    /*
-    DictionaryManagement(Dictionary dictionary) {
-        this.dictionary = dictionary;
-    }
-    */
     public void showAllWords(Dictionary dictionary) {
         System.out.printf("%-5s%-12s%s\n","No","English  |","Vietnamese");
         for(int i = 0; i < dictionary.getDictionary().size(); i++) {
