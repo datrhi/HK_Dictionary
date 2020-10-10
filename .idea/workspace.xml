@@ -19,7 +19,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FXML/UI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaris(copy).txt" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaris(copy).txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uetdic/Dictionary/DictionaryManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uetdic/Dictionary/DictionaryManagement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uetdic/sample/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uetdic/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uetdic/sample/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uetdic/sample/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dictionary/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dictionary/DictionaryManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,6 +86,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -107,11 +121,20 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="XML" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DictionaryApplication" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
   </component>
-  <component name="RunManager" selected="Application.DictionaryCommandline">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\TNC\Desktop\uetdic-master\uetdic\src\icons" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -262,33 +285,34 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="535" y="116" key="#com.intellij.ide.util.MemberChooser" timestamp="1601549360453">
+    <state x="535" y="116" key="#com.intellij.ide.util.MemberChooser" timestamp="1602301746796">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state x="535" y="116" key="#com.intellij.ide.util.MemberChooser/0.0.1458.864@0.0.1458.864" timestamp="1601549360453" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1601892587936">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="535" y="116" key="#com.intellij.ide.util.MemberChooser/0.0.1458.864@0.0.1458.864" timestamp="1602301746796" />
+    <state x="521" y="178" key="FileChooserDialogImpl" timestamp="1602299339790">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
+    <state x="521" y="178" key="FileChooserDialogImpl/0.0.1458.864@0.0.1458.864" timestamp="1602299339790" />
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1601892587936" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1601982202624">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1415" height="195" key="GridCell.Tab.0.bottom" timestamp="1602302002080">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="224" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1601550536221" />
+    <state width="1415" height="195" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1602302002080" />
     <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1601982202624" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1601982202623">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1415" height="195" key="GridCell.Tab.0.center" timestamp="1602302002080">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="224" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1601550536221" />
+    <state width="1415" height="195" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1602302002080" />
     <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1601982202623" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1601982202623">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1415" height="195" key="GridCell.Tab.0.left" timestamp="1602302002080">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="224" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1601550536221" />
+    <state width="1415" height="195" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1602302002080" />
     <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1601982202623" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1601982202623">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1415" height="195" key="GridCell.Tab.0.right" timestamp="1602302002080">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="224" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1601550536221" />
+    <state width="1415" height="195" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1602302002080" />
     <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1601982202623" />
     <state width="1415" height="277" key="GridCell.Tab.1.bottom" timestamp="1601548453488">
       <screen x="0" y="0" width="1458" height="864" />
@@ -306,10 +330,18 @@
       <screen x="0" y="0" width="1458" height="864" />
     </state>
     <state width="1415" height="277" key="GridCell.Tab.1.right/0.0.1458.864@0.0.1458.864" timestamp="1601548453488" />
+    <state x="210" y="6" key="SettingsEditor" timestamp="1602136742578">
+      <screen x="0" y="0" width="1458" height="864" />
+    </state>
+    <state x="210" y="6" key="SettingsEditor/0.0.1458.864@0.0.1458.864" timestamp="1602136742578" />
     <state x="295" y="153" width="946" height="628" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1601980903169">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="295" y="153" width="946" height="628" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.834@0.0.1536.834" timestamp="1601980903169" />
+    <state x="321" y="52" key="new project wizard" timestamp="1602138754367">
+      <screen x="0" y="0" width="1458" height="864" />
+    </state>
+    <state x="321" y="52" key="new project wizard/0.0.1458.864@0.0.1458.864" timestamp="1602138754367" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

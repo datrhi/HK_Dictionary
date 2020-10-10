@@ -51,7 +51,7 @@ public class DictionaryManagement {
 
     public void insertFromFile(Dictionary dictionary) throws IOException {
 
-        Scanner read_file = new Scanner(Paths.get("C:\\Users\\Admin\\Documents\\uetdic\\dictionaries.txt"), "UTF-8");
+        Scanner read_file = new Scanner(Paths.get("C:\\Users\\TNC\\Desktop\\uetdic-master\\uetdic\\dictionaries.txt"), "UTF-8");
         while (read_file.hasNextLine()) {
             Word w = new Word();
 

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller">
+   <children>
+      <AnchorPane maxHeight="50.0" maxWidth="720.0" prefHeight="50.0" prefWidth="720.0" style="-fx-background-color: #1f74b0;">
+         <children>
+            <Label layoutX="21.0" layoutY="4.0" text="H" textFill="#ec9121">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="44.0" layoutY="4.0" text="K" textFill="#ffef06">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="73.0" layoutY="14.0" text="DICTIONARY" textFill="#09d4e1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TabPane fx:id="tab_pane" layoutY="50.0" prefHeight="450.0" prefWidth="720.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="70.0" tabMaxWidth="80.0" tabMinHeight="75.0" tabMinWidth="70.0" AnchorPane.topAnchor="50.0">
+        <tabs>
+          <Tab fx:id="tab_search">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.3678343949044586" prefHeight="450.0" prefWidth="630.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox prefHeight="448.0" prefWidth="227.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                       <children>
+                                          <Label alignment="CENTER" prefHeight="40.0" prefWidth="227.0" text="Search">
+                                             <font>
+                                                <Font name="System Bold" size="26.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="input_word" promptText="Tra từ Anh Việt">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <ListView fx:id="list_search" prefHeight="370.0" prefWidth="200.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Label layoutX="49.0" layoutY="22.0" text="Definition">
+                                       <font>
+                                          <Font name="System Bold" size="26.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="31.0" fitWidth="27.0" layoutX="14.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/icons8-index-100.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextArea fx:id="explain_content" layoutX="14.0" layoutY="89.0" prefHeight="336.0" prefWidth="291.0" />
+                                    <ToggleButton fx:id="btn_fvr" layoutX="230.0" layoutY="20.0" mnemonicParsing="false">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icons/icons8-add-to-favorites-100.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </ToggleButton>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+               <graphic>
+                  <ImageView fitHeight="53.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8-search-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+          </Tab>
+            <Tab fx:id="tab_add">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane prefHeight="450.0" prefWidth="630.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="30.0" tabMinWidth="180.0">
+                          <tabs>
+                            <Tab text="Add">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="118.0" layoutY="83.0" text="Word">
+                                             <font>
+                                                <Font name="System Bold" size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="213.0" prefHeight="50.0" prefWidth="205.0" text="Add a new word">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="input_wordAdd" layoutX="190.0" layoutY="79.0" prefHeight="37.0" prefWidth="252.0" promptText="Write your word" />
+                                          <Label layoutX="111.0" layoutY="135.0" text="Explain">
+                                             <font>
+                                                <Font name="System Bold" size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="text_explain" layoutX="190.0" layoutY="128.0" prefHeight="201.0" prefWidth="252.0" promptText="What does it mean?" />
+                                          <Button fx:id="btn_saveAdd" layoutX="417.0" layoutY="350.0" mnemonicParsing="false" onAction="#AddNewWord" text="Save" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Remove">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="227.0" layoutY="14.0" text="Remove a word">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField layoutX="194.0" layoutY="83.0" prefHeight="35.0" prefWidth="243.0" />
+                                          <Button layoutX="278.0" layoutY="165.0" mnemonicParsing="false" text="Remove" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab text="Edit">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="118.0" layoutY="83.0" text="Word">
+                                             <font>
+                                                <Font name="System Bold" size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="213.0" prefHeight="50.0" prefWidth="205.0" text="Edit a word">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="input_wordEdit" layoutX="190.0" layoutY="79.0" prefHeight="37.0" prefWidth="252.0" promptText="Write your word" />
+                                          <Label layoutX="111.0" layoutY="135.0" text="Explain">
+                                             <font>
+                                                <Font name="System Bold" size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="text_explainEdit" layoutX="190.0" layoutY="128.0" prefHeight="201.0" prefWidth="252.0" promptText="What does it mean?" />
+                                          <Button fx:id="btn_saveEdit" layoutX="417.0" layoutY="350.0" mnemonicParsing="false" onAction="#AddNewWord" text="Save" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="53.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8-add-new-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab fx:id="tab_history">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="list_history" layoutX="14.0" layoutY="10.0" prefHeight="430.0" prefWidth="600.0" />
+                     </children></AnchorPane>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="53.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8-activity-history-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab fx:id="tab_fvr">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="list_fvr" layoutX="14.0" layoutY="10.0" prefHeight="430.0" prefWidth="600.0" />
+                     </children></AnchorPane>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="53.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8-favorite-folder-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab fx:id="tab_setting">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+               <graphic>
+                  <ImageView fitHeight="53.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8-settings-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
