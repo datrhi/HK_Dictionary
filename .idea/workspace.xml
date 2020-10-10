@@ -5,48 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd8b16cf-5e9e-443b-b4f5-3f35e9e180cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/desktop.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uetdic/Controller/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uetdic/Dictionary/Dictionary.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uetdic/Dictionary/DictionaryCommandline.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uetdic/Dictionary/DictionaryManagement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uetdic/Dictionary/Word.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uetdic/FXML/UI.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uetdic/icons/icons8-activity-history-100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uetdic/icons/icons8-add-new-100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uetdic/icons/icons8-add-to-favorites-100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uetdic/icons/icons8-favorite-folder-100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uetdic/icons/icons8-index-100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uetdic/icons/icons8-search-100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uetdic/icons/icons8-settings-100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uetdic/sample/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dictionary/Dictionary.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dictionary/DictionaryCommandline.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dictionary/DictionaryManagement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dictionary/Word.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FXML/UI.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/icons8-activity-history-100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/icons8-add-new-100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/icons8-add-to-favorites-100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/icons8-favorite-folder-100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/icons8-index-100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/icons8-search-100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/icons8-settings-100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uetdic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/uetdic.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Dictionary/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Dictionary/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryCommandline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryCommandline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Dictionary/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Dictionary/Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/UI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +36,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../uet-dictionary-master/uet-dictionary-master" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -104,21 +70,37 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1415" height="224" key="GridCell.Tab.0.bottom" timestamp="1602309145629">
+    <state x="184" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602326109743">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="224" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1602309145629" />
-    <state width="1415" height="224" key="GridCell.Tab.0.center" timestamp="1602309145629">
+    <state x="184" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1458.864@0.0.1458.864" timestamp="1602326109743" />
+    <state x="510" y="187" key="FileChooserDialogImpl" timestamp="1602326156977">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="224" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1602309145629" />
-    <state width="1415" height="224" key="GridCell.Tab.0.left" timestamp="1602309145629">
+    <state x="510" y="187" key="FileChooserDialogImpl/0.0.1458.864@0.0.1458.864" timestamp="1602326156977" />
+    <state width="1415" height="224" key="GridCell.Tab.0.bottom" timestamp="1602332618774">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="224" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1602309145629" />
-    <state width="1415" height="224" key="GridCell.Tab.0.right" timestamp="1602309145629">
+    <state width="1415" height="224" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1602332618774" />
+    <state width="1415" height="224" key="GridCell.Tab.0.center" timestamp="1602332618774">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="224" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1602309145629" />
+    <state width="1415" height="224" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1602332618774" />
+    <state width="1415" height="224" key="GridCell.Tab.0.left" timestamp="1602332618774">
+      <screen x="0" y="0" width="1458" height="864" />
+    </state>
+    <state width="1415" height="224" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1602332618774" />
+    <state width="1415" height="224" key="GridCell.Tab.0.right" timestamp="1602332618774">
+      <screen x="0" y="0" width="1458" height="864" />
+    </state>
+    <state width="1415" height="224" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1602332618774" />
+    <state x="572" y="189" key="refactoring.ChangeSignatureDialog" timestamp="1602331222983">
+      <screen x="0" y="0" width="1458" height="864" />
+    </state>
+    <state x="572" y="189" key="refactoring.ChangeSignatureDialog/0.0.1458.864@0.0.1458.864" timestamp="1602331222983" />
+    <state x="392" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1602330174936">
+      <screen x="0" y="0" width="1458" height="864" />
+    </state>
+    <state x="392" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1458.864@0.0.1458.864" timestamp="1602330174936" />
   </component>
 </project>

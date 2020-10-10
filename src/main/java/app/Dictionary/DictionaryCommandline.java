@@ -1,82 +1,49 @@
-package Dictionary;
+package app.Dictionary;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
+import java.util.TreeSet;
 
-public class DictionaryCommandline {
+public class DictionaryCommandline extends DictionaryManagement {
 
-    private Dictionary dictionary = new Dictionary();
-
-    /**
-     *   Ham showAllWords duoc cho vao trong class DictionaryManagement
-     */
-
-    /*
-    public void showAllWords() {
-        System.out.printf("%-5s%-12s%s\n","No","English  |","Vietnamese");
-        for(int i = 0; i < dictionary.getDictionary().size(); i++) {
-            System.out.printf("%-5d%-11s%s\n",(i+1),dictionary.getDictionary().get(i).getWordTarget(),
-                    dictionary.getDictionary().get(i).getWordExplain());
+    public static void showAllWords()
+    {
+        System.out.printf("No        | English             | Vietnamese\n\n");
+        int index = 0;
+        for (Word w : dictionary)
+        {
+            index++;
+            System.out.printf("%-10d| %-20s| %s\n", index, w.getWordTarget(), w.getWordExplain());
         }
     }
-     */
 
-    public void dictionarySearcher() {
-        Dictionary newDic = new Dictionary();
-        System.out.print(" Nhap cac chu cai tu can tim: ");
-        Scanner sc = new Scanner(System.in);
-        String word = sc.nextLine();
-        int index = dictionary.binarySearch(0,dictionary.getDictionary().size()-1,word,dictionary);
-
-        if(index < 0) {
-            System.out.println(" Not found!");
-        }
-        if(index >= 0) {
-            newDic.getDictionary().add(dictionary.getDictionary().get(index));
-
-            int left = index - 1;
-            int right = index + 1;
-
-            while(left >= 0) {
-                Word leftWord = dictionary.getDictionary().get(left);
-                if (leftWord.getWordTarget().startsWith(word)) {
-                    newDic.getDictionary().add(leftWord);
-                    left--;
-                }
-                else
-                    break;
-            }
-
-            while(right <= dictionary.getDictionary().size()-1) {
-                Word rightWord = dictionary.getDictionary().get(right);
-                if (rightWord.getWordTarget().startsWith(word)) {
-                    newDic.getDictionary().add(rightWord);
-                    right++;
-                }
-                else
-                    break;
+    public ArrayList<String> dictionarySearcher(String word) {
+        Word w = new Word(word);
+        TreeSet<Word> listWord = (TreeSet<Word>) dictionary.subSet(w,new Word(w+"z"));
+        ArrayList<String> listSearch = new ArrayList<String>();
+        if(!listWord.isEmpty()) {
+            for (Word word1: listWord) {
+                listSearch.add(word1.getWordTarget());
             }
         }
-        newDic.showAllWords(newDic);
+        return listSearch;
     }
 
     public void dictionaryBasic() {
-        dictionary.insertFromCommandline(dictionary);
-        dictionary.showAllWords(dictionary);
+        insertFromCommandline();
+        showAllWords();
     }
 
     public void dictionaryAdvanced() throws IOException {
-        dictionary.insertFromFile(dictionary);
-        dictionary.showAllWords(dictionary);
-        dictionary.dictionaryLookup(dictionary);
-        dictionary.dictionaryRemove(dictionary);
-        dictionary.showAllWords(dictionary);
-        dictionary.dictionaryExportToFile(dictionary);
+        insertFromFile();
+        showAllWords();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Nhap tu muon tim:");
+        String word = sc.nextLine();
+        System.out.println(dictionaryLookup(word).toString());
+
     }
 
-    public static void main(String[] args) throws IOException {
-        DictionaryCommandline dcl = new DictionaryCommandline();
-        dcl.dictionaryAdvanced();
-        dcl.dictionarySearcher();
-    }
 }

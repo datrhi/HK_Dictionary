@@ -1,24 +1,18 @@
-package Dictionary;
+package app.Dictionary;
 
 import java.util.ArrayList;
+import java.util.TreeSet;
 
-public class Dictionary extends DictionaryManagement {
+public class Dictionary extends ArrayList<Word> {
 
-    private ArrayList<Word> dictionary = new ArrayList<Word>();
+    public static TreeSet<Word> dictionary = new TreeSet<Word>();
 
-    /*
-    Dictionary() {
-        super(dictionary);
-    }
-    */
+    public static ArrayList<String> favor = new ArrayList<String>();
 
-    public void setDictionary(ArrayList<Word> dictionary) {
-        this.dictionary = dictionary;
-    }
+    public static ArrayList<String> history = new ArrayList<String>();
 
-    public ArrayList<Word> getDictionary() {
-        return dictionary;
-    }
+    public static ArrayList<String> removedWord = new ArrayList<String>();
+
 
     // public void add
 

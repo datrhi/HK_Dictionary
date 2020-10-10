@@ -1,27 +1,19 @@
-package Dictionary;
+package app.Dictionary;
 
 //import java.io.FileNotFoundException;
 //import java.io.UnsupportedEncodingException;
 //import java.io.IOException;
 //import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.*;
 import java.nio.file.Paths;
 import java.io.*;
+import java.util.TreeSet;
 
 
-public class DictionaryManagement {
+public class DictionaryManagement extends Dictionary{
 
-    public void showAllWords(Dictionary dictionary) {
-        System.out.printf("%-5s%-12s%s\n","No","English  |","Vietnamese");
-        for(int i = 0; i < dictionary.getDictionary().size(); i++) {
-            System.out.printf("%-5d%-11s%s\n",(i+1),dictionary.getDictionary().get(i).getWordTarget(),
-                    dictionary.getDictionary().get(i).getWordExplain());
-        }
-    }
 
-    public void insertFromCommandline(Dictionary dictionary) {
+    public void insertFromCommandline() {
 
         Scanner sc = new Scanner(System.in);
         System.out.print(" So tu can nhap: ");
@@ -41,17 +33,14 @@ public class DictionaryManagement {
             String word_explain = sc.nextLine();
             w.setWordExplain(word_explain);
 
-            ArrayList<Word> newDic = dictionary.getDictionary();
-            newDic.add(w);
-            Collections.sort(newDic);  // soft
-            dictionary.setDictionary(newDic);
+            dictionary.add(w);
 
         }
     }
 
-    public void insertFromFile(Dictionary dictionary) throws IOException {
+    public void insertFromFile() throws IOException {
 
-        Scanner read_file = new Scanner(Paths.get("C:\\Users\\TNC\\Desktop\\uetdic-master\\uetdic\\dictionaries.txt"), "UTF-8");
+        Scanner read_file = new Scanner(Paths.get("C:\\Users\\TNC\\Desktop\\uetdic\\dictionaries.txt"), "UTF-8");
         while (read_file.hasNextLine()) {
             Word w = new Word();
 
@@ -61,92 +50,44 @@ public class DictionaryManagement {
             String word_explain = read_file.nextLine();
             w.setWordExplain(word_explain);
 
-            ArrayList<Word> newDic = dictionary.getDictionary();
-            newDic.add(w);
-            Collections.sort(newDic); // sort
-            dictionary.setDictionary(newDic);
+            dictionary.add(w);
         }
         read_file.close();
 
     }
 
-
-    public int binaryLookup(int start, int end, String word, Dictionary dictionary) {
-        if(end < start) {
-            return -1;
+    public Word dictionaryLookup(String word) {
+        Word w = new Word(word);
+        TreeSet<Word> listWord = (TreeSet<Word>) dictionary.subSet(w,new Word(w+"z"));
+        Iterator<Word> iterator =listWord.iterator();
+        if(iterator.hasNext()) {
+            Word s = iterator.next();
+            if(s.getWordTarget().equals(word)) return s;
         }
-        int mid = start + (end - start) / 2;
-        int compare = word.compareToIgnoreCase(dictionary.getDictionary().get(mid).getWordTarget());
-        if(compare == 0) {
-            return mid;
-        }
-        if(compare < 0) {
-            return binaryLookup(start,mid-1,word,dictionary);
-        }
-        return binaryLookup(mid+1,end,word,dictionary);
+        return new Word(w);
     }
 
-    public void dictionaryLookup(Dictionary dictionary) {
-
-        System.out.print(" Find word: ");
-        Scanner sc = new Scanner(System.in);
-        String word = sc.nextLine();
-        //sc.close();
-
-
-        if (dictionary.getDictionary().size() == 0) {
-            System.out.println(" Dictionary is empty!");
-            return;
-        }
-        int index = binaryLookup(0,dictionary.getDictionary().size()-1,word,dictionary);
-        if( index >= 0) {
-            System.out.printf("%-12s%s\n","English  |","Vietnamese");
-            System.out.printf("%-11s%s\n",word,dictionary.getDictionary().get(index).getWordExplain());
-            return;
-        }
-        System.out.println(" Not found!");
-        return;
-    }
-
-    public void dictionaryRemove(Dictionary dictionary) {
-        System.out.print(" Nhap tu muon xoa: ");
-        Scanner sc = new Scanner(System.in);
-        String word = sc.nextLine();
-
-        int index = binaryLookup(0,dictionary.getDictionary().size()-1,word,dictionary);
-        if( index >= 0) {
-            dictionary.getDictionary().remove(index);
-            return;
-        }
-        System.out.println(" Not found!");
-        return;
+    public String dictionaryRemove(String word) {
+        word.trim();
+        word.replaceAll("/t","");
+        Word w = new Word(word);
+        if (word.equals("")) return "Type a word";
+        if (!dictionary.contains(w)) return "Not found!";
+        dictionary.remove(w);
+        removedWord.add(w.getWordTarget());
+        if (history.contains(w.getWordTarget())) history.remove(w.getWordTarget());
+        if (favor.contains(w.getWordTarget())) favor.remove(w.getWordTarget());
+        return "Done!";
     }
 
 
-    public void dictionaryExportToFile(Dictionary dictionary) throws FileNotFoundException, UnsupportedEncodingException {
-        PrintWriter printWriter = new PrintWriter("dictionaris(copy).txt", "UTF-8");
-        for (int i = 0; i < dictionary.getDictionary().size(); i++) {
-            printWriter.printf("%-11s%s\n",dictionary.getDictionary().get(i).getWordTarget(),
-                    dictionary.getDictionary().get(i).getWordExplain());
-        }
-        printWriter.close();
+    public void dictionaryExportToFile() throws IOException {
+        FileWriter fw = new FileWriter("dictionary.txt");
+        for (Word w : dictionary) fw.write(w.toString());
+        fw.close();
     }
 
 
-    public int binarySearch(int start, int end, String word,Dictionary dictionary) {
-
-        if(start > end) {
-            return -1;
-        }
-        int mid = start + (end - start) / 2;
-        String midWord = dictionary.getDictionary().get(mid).getWordTarget();
-        if (midWord.startsWith(word)) {
-            return mid;
-        }
-        int compare = word.compareToIgnoreCase(midWord);
-        if (compare < 0) return binarySearch(start, mid - 1, word,dictionary);
-        return binarySearch(mid + 1, end, word,dictionary);
-    }
 
 
 }
