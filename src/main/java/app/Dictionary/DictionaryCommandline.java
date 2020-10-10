@@ -10,12 +10,12 @@ public class DictionaryCommandline extends DictionaryManagement {
 
     public static void showAllWords()
     {
-        System.out.printf("No        | English             | Vietnamese\n\n");
+        System.out.printf("No   | English             | Vietnamese\n\n");
         int index = 0;
         for (Word w : dictionary)
         {
             index++;
-            System.out.printf("%-10d| %-20s| %s\n", index, w.getWordTarget(), w.getWordExplain());
+            System.out.printf("%-5d| %-20s| %s\n", index, w.getWordTarget(), w.getWordExplain());
         }
     }
 
@@ -40,10 +40,17 @@ public class DictionaryCommandline extends DictionaryManagement {
         insertFromFile();
         showAllWords();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Nhap tu muon tim:");
+        System.out.print("Nhap tu muon tim: ");
         String word = sc.nextLine();
         System.out.println(dictionaryLookup(word).toString());
+        System.out.print("Nhap tu muon search: ");
+        String word1 = sc.nextLine();
+        System.out.println(dictionarySearcher(word1).toString());
+    }
 
+    public static void main(String arr[]) throws IOException {
+        DictionaryCommandline dcl = new DictionaryCommandline();
+        dcl.dictionaryAdvanced();
     }
 
 }

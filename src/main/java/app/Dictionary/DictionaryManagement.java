@@ -40,7 +40,10 @@ public class DictionaryManagement extends Dictionary{
 
     public void insertFromFile() throws IOException {
 
-        Scanner read_file = new Scanner(Paths.get("C:\\Users\\TNC\\Desktop\\uetdic\\dictionaries.txt"), "UTF-8");
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(classLoader.getResource("dictionaries.txt").getFile());
+        Scanner read_file = new Scanner(file);
+     //   Scanner read_file = new Scanner(Paths.get("D:\\BTL_OOP\\uetdic\\src\\main\\resources\\dictionaries.txt"), "UTF-8");
         while (read_file.hasNextLine()) {
             Word w = new Word();
 
