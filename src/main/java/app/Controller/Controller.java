@@ -1,19 +1,27 @@
 package app.Controller;
 
 import app.Dictionary.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
 
     @FXML
-    private ListView<String> list_search;
+    private ListView<String> list_search = new ListView<String>();
 
     @FXML
     private TextField input_wordAdd;
@@ -43,26 +51,31 @@ public class Controller implements Initializable {
     private TextField input_word;
 
     @FXML
-    private ListView<String> list_fvr;
+    private ListView<String> list_fvr = new ListView<String>();
 
     @FXML
     private TabPane tab_pane;
 
     @FXML
-    private ListView<String> list_history;
+    private ListView<String> list_history = new ListView<String>();
 
     private static DictionaryCommandline HKDIC = new DictionaryCommandline();
+
+
+    @FXML
+    void addListSearch(ActionEvent event) {
+
+    }
     @FXML
     void AddNewWord(ActionEvent event) {
 
     }
 
-    public void lookupSearch()
-    {
+    public void lookupSearch() {
         String target = input_word.getText();
         Word word = HKDIC.dictionaryLookup(target);
-        if(HKDIC.history.contains(target)) HKDIC.history.remove(target);
-        HKDIC.history.add(target);
+        if (HKDIC.history.contains(target)) HKDIC.history.remove(target);
+        HKDIC.history.addFirst(target);
         explain_content.setText(word.toString());
         btn_fvr.setSelected(word.isFavor());
     }
@@ -74,5 +87,14 @@ public class Controller implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        input_word.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            public void handle(KeyEvent keyEvent) {
+                if (keyEvent.getCode() == KeyCode.ENTER) {
+                    lookupSearch();
+                }
+            }
+        });
+
     }
 }

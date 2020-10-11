@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd8b16cf-5e9e-443b-b4f5-3f35e9e180cb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Dictionary/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Dictionary/Dictionary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryCommandline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryCommandline.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Dictionary/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Dictionary/Word.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/UI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +48,7 @@
       <recent name="D:\BTL_OOP\uetdic\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DictionaryCommandline">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="DictionaryCommandline" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.Dictionary.DictionaryCommandline" />
       <module name="uetdic" />
@@ -78,8 +77,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DictionaryCommandline" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.DictionaryCommandline" />
       </list>
     </recent_temporary>
   </component>
@@ -103,25 +102,25 @@
       <screen x="0" y="0" width="1458" height="864" />
     </state>
     <state x="510" y="187" key="FileChooserDialogImpl/0.0.1458.864@0.0.1458.864" timestamp="1602326156977" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1602339700686">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1415" height="150" key="GridCell.Tab.0.bottom" timestamp="1602391098640">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="224" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1602332618774" />
+    <state width="1415" height="150" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1602391098640" />
     <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1602339700686" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1602339700686">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1415" height="150" key="GridCell.Tab.0.center" timestamp="1602391098640">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="224" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1602332618774" />
+    <state width="1415" height="150" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1602391098640" />
     <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1602339700686" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1602339700686">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1415" height="150" key="GridCell.Tab.0.left" timestamp="1602391098639">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="224" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1602332618774" />
+    <state width="1415" height="150" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1602391098639" />
     <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1602339700686" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1602339700686">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1415" height="150" key="GridCell.Tab.0.right" timestamp="1602391098640">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="224" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1602332618774" />
+    <state width="1415" height="150" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1602391098640" />
     <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1602339700686" />
     <state x="478" y="121" width="579" height="592" key="find.popup" timestamp="1602337391503">
       <screen x="0" y="0" width="1536" height="834" />

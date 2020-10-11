@@ -10,18 +10,18 @@ public class DictionaryCommandline extends DictionaryManagement {
 
     public static void showAllWords()
     {
-        System.out.printf("No   | English             | Vietnamese\n\n");
+        System.out.printf("No        | English             | Vietnamese\n\n");
         int index = 0;
         for (Word w : dictionary)
         {
             index++;
-            System.out.printf("%-5d| %-20s| %s\n", index, w.getWordTarget(), w.getWordExplain());
+            System.out.printf("%-10d| %-20s| %s\n", index, w.getWordTarget(), w.getWordExplain());
         }
     }
 
     public ArrayList<String> dictionarySearcher(String word) {
         Word w = new Word(word);
-        TreeSet<Word> listWord = (TreeSet<Word>) dictionary.subSet(w,new Word(w+"z"));
+        TreeSet<Word> listWord = (TreeSet<Word>) dictionary.subSet(w,new Word(word+"z"));
         ArrayList<String> listSearch = new ArrayList<String>();
         if(!listWord.isEmpty()) {
             for (Word word1: listWord) {
@@ -40,17 +40,9 @@ public class DictionaryCommandline extends DictionaryManagement {
         insertFromFile();
         showAllWords();
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nhap tu muon tim: ");
+        System.out.println("Nhap tu muon tim:");
         String word = sc.nextLine();
         System.out.println(dictionaryLookup(word).toString());
-        System.out.print("Nhap tu muon search: ");
-        String word1 = sc.nextLine();
-        System.out.println(dictionarySearcher(word1).toString());
-    }
-
-    public static void main(String arr[]) throws IOException {
-        DictionaryCommandline dcl = new DictionaryCommandline();
-        dcl.dictionaryAdvanced();
     }
 
 }

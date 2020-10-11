@@ -43,7 +43,7 @@ public class DictionaryManagement extends Dictionary{
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("dictionaries.txt").getFile());
         Scanner read_file = new Scanner(file);
-     //   Scanner read_file = new Scanner(Paths.get("D:\\BTL_OOP\\uetdic\\src\\main\\resources\\dictionaries.txt"), "UTF-8");
+        //   Scanner read_file = new Scanner(Paths.get("D:\\BTL_OOP\\uetdic\\src\\main\\resources\\dictionaries.txt"), "UTF-8");
         while (read_file.hasNextLine()) {
             Word w = new Word();
 
@@ -61,7 +61,7 @@ public class DictionaryManagement extends Dictionary{
 
     public Word dictionaryLookup(String word) {
         Word w = new Word(word);
-        TreeSet<Word> listWord = (TreeSet<Word>) dictionary.subSet(w,new Word(w+"z"));
+        TreeSet<Word> listWord = (TreeSet<Word>) dictionary.subSet(w,new Word(word+"z"));
         Iterator<Word> iterator =listWord.iterator();
         if(iterator.hasNext()) {
             Word s = iterator.next();

@@ -2,16 +2,17 @@ package app.Dictionary;
 
 import java.util.ArrayList;
 import java.util.TreeSet;
+import java.util.LinkedList;
 
-public class Dictionary extends ArrayList<Word> {
+public class Dictionary extends TreeSet<Word> {
 
     public static TreeSet<Word> dictionary = new TreeSet<Word>();
 
-    public static ArrayList<String> favor = new ArrayList<String>();
+    public static LinkedList<String> favor = new LinkedList<String>();
 
-    public static ArrayList<String> history = new ArrayList<String>();
+    public static LinkedList<String> history = new LinkedList<String>();
 
-    public static ArrayList<String> removedWord = new ArrayList<String>();
+    public static LinkedList<String> removedWord = new LinkedList<String>();
 
 
     // public void add
