@@ -1,5 +1,7 @@
 package app.Dictionary;
 
+import com.sun.deploy.association.Action;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -20,6 +22,7 @@ public class DictionaryCommandline extends DictionaryManagement {
     }
 
     public ArrayList<String> dictionarySearcher(String word) {
+        word = word.trim();
         Word w = new Word(word);
         TreeSet<Word> listWord = (TreeSet<Word>) dictionary.subSet(w,new Word(word+"z"));
         ArrayList<String> listSearch = new ArrayList<String>();
@@ -37,17 +40,27 @@ public class DictionaryCommandline extends DictionaryManagement {
     }
 
     public void dictionaryAdvanced() throws IOException {
-        insertFromFile();
+        insertFromFile2();
         showAllWords();
+        String word;
         Scanner sc = new Scanner(System.in);
+        // Action sc;
+        do {
+            System.out.println("Nhap tu muon tim:");
+            word = sc.nextLine();
+            System.out.println(dictionaryLookup(word).toString());
+        }while (!word.equals("q"));
+        System.out.println("Nhap tu muon sua:");
+        String word_target = sc.nextLine();
+        String word_explain = sc.nextLine();
+        dictionaryEdit(word_target, word_explain);
         System.out.println("Nhap tu muon tim:");
-        String word = sc.nextLine();
+        word = sc.nextLine();
         System.out.println(dictionaryLookup(word).toString());
     }
 
     public static void main(String[] args) throws IOException {
         DictionaryCommandline dc = new DictionaryCommandline();
-        dc.insertFromFile2();
-        dc.dictionaryExportToFile();
+        dc.dictionaryAdvanced();
     }
 }

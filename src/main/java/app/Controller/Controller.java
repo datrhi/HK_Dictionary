@@ -12,11 +12,13 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
-
+import sun.awt.HKSCS;
+//import android.widget.ArrayAdapter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.List;
 
 public class Controller implements Initializable {
 
@@ -63,9 +65,27 @@ public class Controller implements Initializable {
 
 
     @FXML
-    void addListSearch(ActionEvent event) {
-
+    void addListSearch() {
+        String target = input_word.getText();
+        if(!target.isEmpty()) {
+            list_search.getItems().setAll(HKDIC.dictionarySearcher(target));
+        }
+        else{
+            list_search.getItems().clear();
+        }
     }
+
+    @FXML
+    void selectFromListSearch(MouseEvent event) {
+        String list_search_word = list_search.getSelectionModel().getSelectedItem();
+        if(!list_search_word.isEmpty() || list_search_word != null) {
+            Word word = HKDIC.dictionaryLookup(list_search_word);
+            explain_content.setText(word.toString());
+        }
+        Word word = HKDIC.dictionaryLookup(list_search_word);
+        explain_content.setText(word.toString());
+    }
+
     @FXML
     void AddNewWord(ActionEvent event) {
 
@@ -74,16 +94,14 @@ public class Controller implements Initializable {
     public void lookupSearch() {
         String target = input_word.getText();
         Word word = HKDIC.dictionaryLookup(target);
-//        if (HKDIC.history.contains(target)) HKDIC.history.remove(target);
-//        HKDIC.history.addFirst(target);
         explain_content.setText(word.toString());
-//        btn_fvr.setSelected(word.isFavor());
+        if(target.isEmpty()) explain_content.clear();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-            HKDIC.insertFromFile();
+            HKDIC.insertFromFile2();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -97,4 +115,6 @@ public class Controller implements Initializable {
         });
 
     }
+
+
 }

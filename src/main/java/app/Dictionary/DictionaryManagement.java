@@ -33,34 +33,30 @@ public class DictionaryManagement extends Dictionary {
 
             System.out.print("\n Nhap tu moi " + (i + 1) + ": ");
             String word_target = sc.nextLine();
-            w.setWordTarget(word_target);
+            w.setWordTarget(word_target.trim());
 
             System.out.print(" Nhap giai nghia " + (i + 1) + ": ");
             String word_explain = sc.nextLine();
-            w.setWordExplain(word_explain);
+            w.setWordExplain(word_explain.trim());
 
             dictionary.add(w);
 
         }
     }
 
-    public void insertFromFile() throws IOException {
-
-//        ClassLoader classLoader = getClass().getClassLoader();
+    public void insertFromFile1() throws IOException {
         File file = new File("dictionaries.txt");
         Scanner read_file = new Scanner(file);
-        //   Scanner read_file = new Scanner(Paths.get("D:\\BTL_OOP\\uetdic\\src\\main\\resources\\dictionaries.txt"), "UTF-8");
         while (read_file.hasNextLine()) {
             String[] word = read_file.nextLine().split("\t");
-            Word w = new Word(word[0], word[1].trim());
+            Word w = new Word(word[0].trim(), word[1].trim());
             dictionary.add(w);
         }
         read_file.close();
-
     }
 
-
     public Word dictionaryLookup(String word) {
+        word = word.trim();
         Word w = new Word(word);
         TreeSet<Word> listWord = (TreeSet<Word>) dictionary.subSet(w, new Word(word + "z"));
         Iterator<Word> iterator = listWord.iterator();
@@ -72,7 +68,7 @@ public class DictionaryManagement extends Dictionary {
     }
 
     public String dictionaryRemove(String word) {
-        word.trim();
+        word = word.trim();
         word.replaceAll("/t", "");
         Word w = new Word(word);
         if (word.equals("")) return "Type a word";
@@ -84,16 +80,12 @@ public class DictionaryManagement extends Dictionary {
         return "Done!";
     }
 
-
     public void dictionaryExportToFile() throws IOException {
         FileWriter fw = new FileWriter("dictionary.txt");
         for (Word w : dictionary) fw.write(w.toString());
         fw.close();
     }
 
-    /**
-     * insert file test
-     */
     public void insertFromFile2() throws IOException {
         try {
             String file = new String(Files.readAllBytes(Paths.get("AnhViet.txt")), StandardCharsets.UTF_8);
@@ -112,7 +104,7 @@ public class DictionaryManagement extends Dictionary {
                         word_spelling = "";
                     }
                     word_explain = list[1];
-                    dictionary.add(new Word(word_target,word_explain,word_spelling));
+                    dictionary.add(new Word(word_target.trim(),word_explain.trim(),word_spelling.trim()));
                 }
             }
         }
@@ -121,5 +113,17 @@ public class DictionaryManagement extends Dictionary {
         }
     }
 
-
+    public void dictionaryEdit(String word_target, String word_explain) {
+        word_target = word_target.trim();
+        word_explain = word_explain.trim();
+        Word word = new Word(word_target, word_explain);
+        TreeSet<Word> listWord = (TreeSet<Word>) dictionary.subSet(word, new Word(word + "z"));
+        Iterator<Word> iterator = listWord.iterator();
+        if (iterator.hasNext()) {
+            Word s = iterator.next();
+            if (s.getWordTarget().equals(word_target)) {
+                s.setWordExplain(word_explain);
+            }
+        }
+    }
 }
