@@ -45,4 +45,9 @@ public class DictionaryCommandline extends DictionaryManagement {
         System.out.println(dictionaryLookup(word).toString());
     }
 
+    public static void main(String[] args) throws IOException {
+        DictionaryCommandline dc = new DictionaryCommandline();
+        dc.insertFromFile2();
+        dc.dictionaryExportToFile();
+    }
 }

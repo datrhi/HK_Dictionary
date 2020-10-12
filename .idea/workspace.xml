@@ -8,10 +8,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Dictionary/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Dictionary/Dictionary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryCommandline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryCommandline.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/UI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Dictionary/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Dictionary/Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dictionaries.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/Controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/Dictionary/DictionaryCommandline.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Dictionary/DictionaryCommandline.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/Dictionary/DictionaryManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Dictionary/DictionaryManagement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/Dictionary/Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Dictionary/Word.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dictionaries.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +46,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DictionaryApplication" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -98,29 +103,33 @@
       <screen x="0" y="0" width="1458" height="864" />
     </state>
     <state x="184" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1458.864@0.0.1458.864" timestamp="1602326109743" />
-    <state x="510" y="187" key="FileChooserDialogImpl" timestamp="1602326156977">
+    <state x="535" y="116" key="#com.intellij.ide.util.MemberChooser" timestamp="1602486590059">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state x="510" y="187" key="FileChooserDialogImpl/0.0.1458.864@0.0.1458.864" timestamp="1602326156977" />
-    <state width="1415" height="150" key="GridCell.Tab.0.bottom" timestamp="1602391098640">
+    <state x="535" y="116" key="#com.intellij.ide.util.MemberChooser/0.0.1458.864@0.0.1458.864" timestamp="1602486590059" />
+    <state x="510" y="187" key="FileChooserDialogImpl" timestamp="1602484820647">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="150" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1602391098640" />
+    <state x="510" y="187" key="FileChooserDialogImpl/0.0.1458.864@0.0.1458.864" timestamp="1602484820647" />
+    <state width="1415" height="150" key="GridCell.Tab.0.bottom" timestamp="1602488381646">
+      <screen x="0" y="0" width="1458" height="864" />
+    </state>
+    <state width="1415" height="150" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1602488381646" />
     <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1602339700686" />
-    <state width="1415" height="150" key="GridCell.Tab.0.center" timestamp="1602391098640">
+    <state width="1415" height="150" key="GridCell.Tab.0.center" timestamp="1602488381646">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="150" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1602391098640" />
+    <state width="1415" height="150" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1602488381646" />
     <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1602339700686" />
-    <state width="1415" height="150" key="GridCell.Tab.0.left" timestamp="1602391098639">
+    <state width="1415" height="150" key="GridCell.Tab.0.left" timestamp="1602488381646">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="150" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1602391098639" />
+    <state width="1415" height="150" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1602488381646" />
     <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1602339700686" />
-    <state width="1415" height="150" key="GridCell.Tab.0.right" timestamp="1602391098640">
+    <state width="1415" height="150" key="GridCell.Tab.0.right" timestamp="1602488381646">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="150" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1602391098640" />
+    <state width="1415" height="150" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1602488381646" />
     <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1602339700686" />
     <state x="478" y="121" width="579" height="592" key="find.popup" timestamp="1602337391503">
       <screen x="0" y="0" width="1536" height="834" />
@@ -130,9 +139,25 @@
       <screen x="0" y="0" width="1458" height="864" />
     </state>
     <state x="572" y="189" key="refactoring.ChangeSignatureDialog/0.0.1458.864@0.0.1458.864" timestamp="1602331222983" />
-    <state x="392" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1602330174936">
+    <state x="392" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1602485166865">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state x="392" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1458.864@0.0.1458.864" timestamp="1602330174936" />
+    <state x="392" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1458.864@0.0.1458.864" timestamp="1602485166865" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryCommandline.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryManagement.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -74,10 +74,10 @@ public class Controller implements Initializable {
     public void lookupSearch() {
         String target = input_word.getText();
         Word word = HKDIC.dictionaryLookup(target);
-        if (HKDIC.history.contains(target)) HKDIC.history.remove(target);
-        HKDIC.history.addFirst(target);
+//        if (HKDIC.history.contains(target)) HKDIC.history.remove(target);
+//        HKDIC.history.addFirst(target);
         explain_content.setText(word.toString());
-        btn_fvr.setSelected(word.isFavor());
+//        btn_fvr.setSelected(word.isFavor());
     }
 
     @Override

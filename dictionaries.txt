@@ -1,0 +1,9 @@
+hello	xin chao
+bye	tam biet
+run	chay
+jump	nhay
+computer	may tinh
+book	sach
+jumc	unknown
+jumasd	unknown
+jumpqerew	unknwon
