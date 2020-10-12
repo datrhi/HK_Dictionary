@@ -78,12 +78,10 @@ public class Controller implements Initializable {
     @FXML
     void selectFromListSearch(MouseEvent event) {
         String list_search_word = list_search.getSelectionModel().getSelectedItem();
-        if(!list_search_word.isEmpty() || list_search_word != null) {
+        if(!list_search_word.isEmpty()) {
             Word word = HKDIC.dictionaryLookup(list_search_word);
             explain_content.setText(word.toString());
         }
-        Word word = HKDIC.dictionaryLookup(list_search_word);
-        explain_content.setText(word.toString());
     }
 
     @FXML

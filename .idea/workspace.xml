@@ -53,7 +53,7 @@
       <recent name="D:\BTL_OOP\uetdic\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DictionaryCommandline">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="DictionaryCommandline" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.Dictionary.DictionaryCommandline" />
       <module name="uetdic" />
@@ -82,8 +82,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DictionaryCommandline" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.DictionaryCommandline" />
       </list>
     </recent_temporary>
   </component>
@@ -113,26 +113,26 @@
     </state>
     <state x="510" y="187" key="FileChooserDialogImpl/0.0.1458.864@0.0.1458.864" timestamp="1602484820647" />
     <state x="537" y="181" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1602518628094" />
-    <state width="1493" height="125" key="GridCell.Tab.0.bottom" timestamp="1602524618444">
+    <state width="1493" height="125" key="GridCell.Tab.0.bottom" timestamp="1602525016723">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1415" height="150" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1602488381646" />
-    <state width="1493" height="125" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1602524618444" />
-    <state width="1493" height="125" key="GridCell.Tab.0.center" timestamp="1602524618444">
+    <state width="1493" height="125" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1602525016723" />
+    <state width="1493" height="125" key="GridCell.Tab.0.center" timestamp="1602525016723">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1415" height="150" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1602488381646" />
-    <state width="1493" height="125" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1602524618444" />
-    <state width="1493" height="125" key="GridCell.Tab.0.left" timestamp="1602524618444">
+    <state width="1493" height="125" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1602525016723" />
+    <state width="1493" height="125" key="GridCell.Tab.0.left" timestamp="1602525016722">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1415" height="150" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1602488381646" />
-    <state width="1493" height="125" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1602524618444" />
-    <state width="1493" height="125" key="GridCell.Tab.0.right" timestamp="1602524618444">
+    <state width="1493" height="125" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1602525016722" />
+    <state width="1493" height="125" key="GridCell.Tab.0.right" timestamp="1602525016723">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1415" height="150" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1602488381646" />
-    <state width="1493" height="125" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1602524618444" />
+    <state width="1493" height="125" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1602525016723" />
     <state x="478" y="121" width="579" height="592" key="find.popup" timestamp="1602337391503">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
