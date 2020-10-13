@@ -15,6 +15,7 @@ public class Dictionary extends TreeSet<Word> {
     public static LinkedList<String> removedWord = new LinkedList<String>();
 
 
+
     // public void add
 
 }

@@ -46,7 +46,7 @@
                                                 <Font name="System Bold" size="26.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="input_word" onAction="#AddHistory" onKeyReleased="#addListSearch" promptText="Tra từ Anh Việt">
+                                          <TextField fx:id="input_word" onKeyReleased="#addListSearch" promptText="Tra từ Anh Việt">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
@@ -69,7 +69,7 @@
                                        </image>
                                     </ImageView>
                                     <TextArea fx:id="explain_content" layoutX="6.0" layoutY="65.0" prefHeight="376.0" prefWidth="381.0" />
-                                    <ToggleButton fx:id="btn_fvr" layoutX="298.0" layoutY="16.0" mnemonicParsing="false" onAction="#AddFavorite" prefHeight="36.0" prefWidth="36.0">
+                                    <ToggleButton fx:id="btn_fvr" layoutX="298.0" layoutY="16.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="36.0">
                                        <graphic>
                                           <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -215,7 +215,7 @@
                   </ImageView>
                </graphic>
             </Tab>
-            <Tab fx:id="tab_history">
+            <Tab fx:id="tab_history" onSelectionChanged="#addHistory">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -231,7 +231,7 @@
                   </ImageView>
                </graphic>
             </Tab>
-            <Tab fx:id="tab_fvr">
+            <Tab fx:id="tab_fvr" onSelectionChanged="#addFavorite">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>

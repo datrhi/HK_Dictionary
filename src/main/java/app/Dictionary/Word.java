@@ -61,6 +61,10 @@ public class Word implements Comparable<Word> {
         return word_explain;
     }
 
+    public void setFavor(boolean favor) {
+        isFavor = favor;
+    }
+
     @Override
     public int compareTo(Word word) {
         return this.getWordTarget().compareToIgnoreCase(word.getWordTarget());

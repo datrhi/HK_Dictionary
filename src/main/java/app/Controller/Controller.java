@@ -103,6 +103,9 @@ public class Controller implements Initializable {
         String target = input_word.getText().trim();
         Word word = HKDIC.dictionaryLookup(target);
         explain_content.setText(word.toString());
+        if (HKDIC.history.contains(target)) HKDIC.history.remove(target);
+        HKDIC.history.addFirst(target);
+        btn_fvr.setSelected(word.isFavor());
     }
 
     @FXML
@@ -125,6 +128,8 @@ public class Controller implements Initializable {
             addListSearch();
             Word word = HKDIC.dictionaryLookup(target);
             explain_content.setText(word.toString());
+            if (HKDIC.history.contains(target)) HKDIC.history.remove(target);
+            HKDIC.history.addFirst(target);
         }
     }
     //-End.-//
@@ -197,7 +202,7 @@ public class Controller implements Initializable {
 
     @FXML
     void selectFromListRemove() {
-        String target = list_searchRemove.getSelectionModel().getSelectedItem();
+        String target = list_searchRemove.getSelectionModel().getSelectedItem().trim();
         if(target != null) {
             input_wordRemove.setText(target);
             AddListRemove();
@@ -214,10 +219,10 @@ public class Controller implements Initializable {
 
     /**---------------------- Favorite List. -------------------------*/
     @FXML
-    void AddFavorite() {
-        String target = input_word.getText().trim();
-        if (!target.isEmpty()) {
-            list_fvr.getItems().add(target);
+    void addFavorite() {
+        list_fvr.getItems().clear();
+        for (String w : HKDIC.favor) {
+            list_fvr.getItems().add(w);
         }
     }
 
@@ -241,9 +246,11 @@ public class Controller implements Initializable {
 
     /**---------------------- Historic List. -------------------------*/
     @FXML
-    void AddHistory() {
-        String target = input_word.getText();
-        if(!target.isEmpty()) list_history.getItems().add(target);
+    void addHistory() {
+        list_history.getItems().clear();
+        for (String w : HKDIC.history) {
+            list_history.getItems().add(w);
+        }
     }
 
     @FXML
@@ -263,6 +270,17 @@ public class Controller implements Initializable {
             e.printStackTrace();
         }
 
+        btn_fvr.selectedProperty().addListener(((observable, oldValue, newValue) -> {
+            String target = input_word.getText();
+            Word w = HKDIC.dictionaryLookup(target);
+            w.setFavor(newValue);
+            if (newValue) {
+                if (!HKDIC.favor.contains(target)) HKDIC.favor.addFirst(target);
+
+            } else {
+                HKDIC.favor.remove(target);
+            }
+        }));
         input_word.setOnKeyPressed(new EventHandler<KeyEvent>() {
             public void handle(KeyEvent keyEvent) {
                 if (keyEvent.getCode() == KeyCode.ENTER) {
