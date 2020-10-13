@@ -14,7 +14,6 @@ public class Main extends Application {
         primaryStage.setTitle("HK Dictionary");
         primaryStage.setScene(new Scene(root, 720, 500));
         primaryStage.show();
-
     }
 
     public static void main(String[] args) {

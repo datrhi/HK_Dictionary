@@ -117,6 +117,21 @@ public class DictionaryManagement extends Dictionary {
         }
     }
 
+    public void dictionaryEdit(String word_target, String word_explain, String word_spelling) {
+        word_target = word_target.trim();
+        word_explain = word_explain.trim();
+        Word word = new Word(word_target, word_explain);
+        TreeSet<Word> listWord = (TreeSet<Word>) dictionary.subSet(word, new Word(word + "z"));
+        Iterator<Word> iterator = listWord.iterator();
+        if (iterator.hasNext()) {
+            Word s = iterator.next();
+            if (s.getWordTarget().equals(word_target)) {
+                s.setWordExplain(word_explain);
+                s.setWord_spelling(word_spelling);
+            }
+        }
+    }
+
     public void dictionaryEdit(String word_target, String word_explain) {
         word_target = word_target.trim();
         word_explain = word_explain.trim();
