@@ -46,7 +46,7 @@
                                                 <Font name="System Bold" size="26.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="input_word" onKeyReleased="#addListSearch" promptText="Tra từ Anh Việt">
+                                          <TextField fx:id="input_word" onAction="#AddHistory" onKeyReleased="#addListSearch" promptText="Tra từ Anh Việt">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
@@ -69,12 +69,14 @@
                                        </image>
                                     </ImageView>
                                     <TextArea fx:id="explain_content" layoutX="6.0" layoutY="65.0" prefHeight="376.0" prefWidth="381.0" />
-                                    <ToggleButton fx:id="btn_fvr" layoutX="298.0" layoutY="16.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="36.0" />
-                                    <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="299.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../icons/icons8-add-to-favorites-100.png" />
-                                       </image>
-                                    </ImageView>
+                                    <ToggleButton fx:id="btn_fvr" layoutX="298.0" layoutY="16.0" mnemonicParsing="false" onAction="#AddFavorite" prefHeight="36.0" prefWidth="36.0">
+                                       <graphic>
+                                          <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icons/icons8-add-to-favorites-100.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></ToggleButton>
                                  </children>
                               </AnchorPane>
                           </items>
@@ -100,7 +102,7 @@
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Label layoutX="58.0" layoutY="84.0" text="Word">
+                                          <Label layoutX="103.0" layoutY="60.0" text="Word">
                                              <font>
                                                 <Font name="System Bold" size="19.0" />
                                              </font>
@@ -110,26 +112,26 @@
                                                 <Font name="System Bold" size="24.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="input_wordAdd" layoutX="119.0" layoutY="80.0" prefHeight="37.0" prefWidth="252.0" promptText="Write your word" />
-                                          <Label layoutX="111.0" layoutY="135.0" text="Explain">
+                                          <TextField fx:id="input_wordAdd" layoutX="190.0" layoutY="55.0" prefHeight="37.0" prefWidth="252.0" promptText="Write your word" />
+                                          <Label layoutX="107.0" layoutY="205.0" text="Explain">
                                              <font>
                                                 <Font name="System Bold" size="19.0" />
                                              </font>
                                           </Label>
-                                          <TextArea fx:id="text_explain" layoutX="190.0" layoutY="128.0" prefHeight="201.0" prefWidth="252.0" promptText="What does it mean?" />
-                                          <Button fx:id="btn_saveAdd" layoutX="290.0" layoutY="367.0" mnemonicParsing="false" onAction="#AddNewWord" text="Save" />
-                                          <Label layoutX="14.0" layoutY="335.0" text="Status:" textFill="#fc0000">
+                                          <TextArea fx:id="text_explain" layoutX="190.0" layoutY="149.0" prefHeight="201.0" prefWidth="252.0" promptText="What does it mean?" />
+                                          <Button fx:id="btn_saveAdd" layoutX="483.0" layoutY="319.0" mnemonicParsing="false" onAction="#AddNewWord" text="Save" />
+                                          <Label layoutX="28.0" layoutY="353.0" text="Status:" textFill="#fc0000">
                                              <font>
                                                 <Font name="System Bold" size="19.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="label_stt" layoutX="83.0" layoutY="334.0" prefHeight="33.0" prefWidth="474.0" />
-                                          <Label layoutX="382.0" layoutY="84.0" text="Spelling">
+                                          <Label fx:id="label_stt" layoutX="95.0" layoutY="353.0" prefHeight="33.0" prefWidth="474.0" />
+                                          <Label layoutX="103.0" layoutY="103.0" text="Spelling">
                                              <font>
                                                 <Font name="System Bold" size="19.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="text_spelling" layoutX="468.0" layoutY="80.0" prefHeight="37.0" prefWidth="131.0" promptText="Form : /Spelling/" />
+                                          <TextField fx:id="text_spelling" layoutX="190.0" layoutY="103.0" prefHeight="34.0" prefWidth="251.0" promptText="Form : /Spelling/" />
                                        </children>
                                     </AnchorPane>
                               </content>
@@ -143,14 +145,20 @@
                                                 <Font name="System Bold" size="24.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="input_wordRemove" layoutX="194.0" layoutY="83.0" prefHeight="35.0" prefWidth="243.0" />
-                                          <Button fx:id="btn_saveRemove" layoutX="278.0" layoutY="165.0" mnemonicParsing="false" onAction="#RemoveWord" text="Remove" />
-                                          <Label layoutX="61.0" layoutY="127.0" text="Status:" textFill="#fc0000">
+                                          <TextField fx:id="input_wordRemove" layoutX="194.0" layoutY="83.0" onKeyReleased="#AddListRemove" prefHeight="35.0" prefWidth="243.0" promptText="Write your work" />
+                                          <Button fx:id="btn_saveRemove" layoutX="461.0" layoutY="296.0" mnemonicParsing="false" onAction="#RemoveWord" text="Remove" />
+                                          <Label layoutX="50.0" layoutY="343.0" text="Status:" textFill="#fc0000">
                                              <font>
                                                 <Font name="System Bold" size="19.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="label_sttRemove" layoutX="136.0" layoutY="131.0" prefHeight="21.0" prefWidth="333.0" />
+                                          <Label fx:id="label_sttRemove" layoutX="122.0" layoutY="343.0" prefHeight="27.0" prefWidth="339.0" />
+                                          <ListView fx:id="list_searchRemove" layoutX="194.0" layoutY="124.0" onMouseClicked="#selectFromListRemove" prefHeight="203.0" prefWidth="241.0" />
+                                          <Label layoutX="128.0" layoutY="87.0" text="Word">
+                                             <font>
+                                                <Font name="System Bold" size="19.0" />
+                                             </font>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                               </content>
@@ -159,7 +167,7 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Label layoutX="14.0" layoutY="66.0" text="Word">
+                                          <Label layoutX="10.0" layoutY="64.0" text="Word">
                                              <font>
                                                 <Font name="System Bold" size="19.0" />
                                              </font>
@@ -169,27 +177,27 @@
                                                 <Font name="System Bold" size="24.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="input_wordEdit" layoutX="71.0" layoutY="62.0" onKeyReleased="#addListEdit" prefHeight="34.0" prefWidth="173.0" promptText="Write your word" />
-                                          <Label layoutX="251.0" layoutY="119.0" text="Explain">
+                                          <TextField fx:id="input_wordEdit" layoutX="67.0" layoutY="58.0" onKeyReleased="#addListEdit" prefHeight="37.0" prefWidth="180.0" promptText="Write your word" />
+                                          <Label layoutX="551.0" layoutY="177.0" text="Explain">
                                              <font>
                                                 <Font name="System Bold" size="19.0" />
                                              </font>
                                           </Label>
-                                          <TextArea fx:id="text_explainEdit" layoutX="332.0" layoutY="119.0" prefHeight="216.0" prefWidth="286.0" promptText="What does it mean?" />
-                                          <Button fx:id="btn_saveEdit" layoutX="451.0" layoutY="372.0" mnemonicParsing="false" onAction="#EditWord" text="Save" />
-                                          <ListView fx:id="list_searchEdit" layoutX="71.0" layoutY="94.0" onMouseClicked="#selectFromListEdit" prefHeight="272.0" prefWidth="173.0" />
-                                          <Label layoutX="247.0" layoutY="65.0" text="Spelling">
+                                          <TextArea fx:id="text_explainEdit" layoutX="258.0" layoutY="99.0" prefHeight="253.0" prefWidth="281.0" promptText="What does it mean?" />
+                                          <Button fx:id="btn_saveEdit" layoutX="551.0" layoutY="321.0" mnemonicParsing="false" onAction="#EditWord" text="Save" />
+                                          <Label layoutX="547.0" layoutY="65.0" text="Spelling">
                                              <font>
                                                 <Font name="System Bold" size="19.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="text_spellingEdit" layoutX="333.0" layoutY="62.0" prefHeight="34.0" prefWidth="286.0" promptText="/Spelling/" />
-                                          <Label layoutX="253.0" layoutY="344.0" text="Status:" textFill="#fc0000">
+                                          <TextField fx:id="text_spellingEdit" layoutX="258.0" layoutY="57.0" prefHeight="38.0" prefWidth="281.0" promptText="/Spelling/" />
+                                          <Label layoutX="35.0" layoutY="359.0" text="Status:" textFill="#fc0000">
                                              <font>
                                                 <Font name="System Bold" size="19.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="label_sttEdit" layoutX="316.0" layoutY="348.0" prefHeight="21.0" prefWidth="298.0" />
+                                          <Label fx:id="label_sttEdit" layoutX="103.0" layoutY="360.0" prefHeight="27.0" prefWidth="397.0" />
+                                          <ListView fx:id="list_searchEdit" layoutX="68.0" layoutY="97.0" onMouseClicked="#selectFromListEdit" prefHeight="254.0" prefWidth="179.0" />
                                        </children>
                                     </AnchorPane>
                                  </content>
@@ -211,7 +219,8 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ListView fx:id="list_history" layoutX="14.0" layoutY="10.0" prefHeight="430.0" prefWidth="600.0" />
+                        <ListView fx:id="list_history" layoutX="5.0" layoutY="6.0" onMouseClicked="#SelectFromListHistory" prefHeight="440.0" prefWidth="204.0" />
+                        <TextArea fx:id="text_explainHistory" layoutX="214.0" layoutY="5.0" prefHeight="440.0" prefWidth="415.0" />
                      </children></AnchorPane>
                </content>
                <graphic>
@@ -226,7 +235,8 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ListView fx:id="list_fvr" layoutX="14.0" layoutY="10.0" prefHeight="430.0" prefWidth="600.0" />
+                        <ListView fx:id="list_fvr" layoutX="5.0" layoutY="4.0" onMouseClicked="#SelectFromListFavorite" prefHeight="440.0" prefWidth="201.0" />
+                        <TextArea fx:id="text_explainFvr" layoutX="210.0" layoutY="4.0" prefHeight="440.0" prefWidth="418.0" />
                      </children></AnchorPane>
                </content>
                <graphic>
