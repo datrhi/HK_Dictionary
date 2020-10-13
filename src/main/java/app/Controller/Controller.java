@@ -59,14 +59,6 @@ public class Controller implements Initializable {
     private TextField input_wordRemove;
 
     @FXML
-    private TextField spellingAdd;
-
-    @FXML
-    private TextField spellingEdit;
-
-    @FXML TextArea explain_fvr;
-
-    @FXML
     private ListView<String> list_fvr = new ListView<String>();
 
     @FXML
@@ -77,19 +69,28 @@ public class Controller implements Initializable {
 
     private static DictionaryCommandline HKDIC = new DictionaryCommandline();
 
+    @FXML
+    private ListView<String> list_searchEdit;
 
     @FXML
-    public void lookupSearch() {
-        String target = input_word.getText().trim();
-        Word word = HKDIC.dictionaryLookup(target);
-        explain_content.setText(word.toString());
-        if(target.isEmpty()) explain_content.clear();
-    }
+    private Label label_stt;
+
+    @FXML
+    private TextField text_spelling;
+
+    @FXML
+    private TextField text_spellingEdit;
+
+    @FXML
+    private Label label_sttEdit;
+
+    @FXML
+    private Label label_sttRemove;
 
     @FXML
     void addListSearch() {
-        String target = input_word.getText().trim();
-        if(!target.isEmpty()) {
+        String target = input_word.getText();
+        if(!target.isEmpty() || target != null) {
             list_search.getItems().setAll(HKDIC.dictionarySearcher(target));
         }
         else{
@@ -98,67 +99,85 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    void selectFromListSearch() {
-        String target = list_search.getSelectionModel().getSelectedItem().trim();
-        if(!target.isEmpty()) {
-            Word word = HKDIC.dictionaryLookup(target);
-            input_word.setText(target);
-            addListSearch();
+    void selectFromListSearch(MouseEvent event) {
+        String newWord = list_search.getSelectionModel().getSelectedItem();
+        if(!newWord.isEmpty() || newWord != null) {
+            Word word = HKDIC.dictionaryLookup(newWord);
             explain_content.setText(word.toString());
         }
     }
 
     @FXML
-    void AddNewWord() {
-        String word_target = input_wordAdd.getText().trim();
-        String word_explain = text_explain.getText().trim();
-        String word_spelling = spellingAdd.getText().trim();
-        Word word = new Word(word_target, word_explain, word_spelling);
-        HKDIC.insertWord(word);
-    }
-
-    @FXML
-    void ShowTextEdit() {
-        String word_target = input_wordEdit.getText().trim();
-        Word word = HKDIC.dictionaryLookup(word_target);
-        text_explainEdit.setText(word.getWordExplain());
-        spellingEdit.setText(word.getWord_spelling());
-        if(word_target.isEmpty()) {
-            text_explainEdit.clear();
-            spellingEdit.clear();
+    void addListEdit() {
+        String target = input_wordEdit.getText();
+        if(!target.isEmpty() || target != null) {
+            list_searchEdit.getItems().setAll(HKDIC.dictionarySearcher(target));
         }
-
-    }
-
-    @FXML
-    void EditWord() {
-        String word_target = input_wordEdit.getText().trim();
-        String word_explain = text_explainEdit.getText().trim();
-        String word_spelling = spellingEdit.getText().trim();
-        HKDIC.dictionaryEdit(word_target, word_explain, word_spelling);
-    }
-
-    @FXML
-    void RemoveWord() {
-        String w = input_wordRemove.getText().trim();
-        HKDIC.dictionaryRemove(w);
-    }
-
-    @FXML
-    void AddFavorite() {
-        String target = input_word.getText().trim();
-        if (!target.isEmpty()) {
-            list_fvr.getItems().add(target);
+        else{
+            list_searchEdit.getItems().clear();
         }
     }
 
     @FXML
-    void SelectFromFavorite() {
-        String newWord = list_fvr.getSelectionModel().getSelectedItem().trim();
-        if(!newWord.isEmpty()) {
+    void selectFromListEdit(MouseEvent event) {
+        String newWord = list_searchEdit.getSelectionModel().getSelectedItem();
+        if(!newWord.isEmpty() || newWord != null) {
             Word word = HKDIC.dictionaryLookup(newWord);
-            explain_fvr.setText(word.toString());
+            text_explainEdit.setText(word.getWordExplain());
+            text_spellingEdit.setText(word.getWord_spelling());
         }
+    }
+
+    @FXML
+    void AddNewWord(ActionEvent event) {
+        String word_target = input_wordAdd.getText();
+        word_target.trim();
+        String word_explain = text_explain.getText();
+        word_explain.trim();
+        String word_spelling = text_spelling.getText();
+        word_spelling.trim();
+        label_stt.setText(HKDIC.insertWord(word_target,word_spelling,word_explain));
+    }
+
+//    @FXML
+//    void checkStatus() {
+//        String newWord = input_wordAdd.getText();
+//        newWord.trim();
+//        if (newWord.equals("")) {
+//            label_stt.setText("");
+//            return;
+//        }
+//        if (HKDIC.dictionaryLookup(newWord).getWordExplain().equals("Not found!")) {
+//            label_stt.setText("Can be added");
+//        } else {
+//            label_stt.setText("This word is already existed!");
+//        }
+//    }
+
+    @FXML
+    void EditWord(ActionEvent event) {
+        String word_target = list_searchEdit.getSelectionModel().getSelectedItem();
+        word_target.trim();
+        String word_explain = text_explainEdit.getText();
+        word_explain.trim();
+        String word_spelling = text_spellingEdit.getText();
+        word_spelling.trim();
+        label_sttEdit.setText(HKDIC.dictionaryEdit2(word_target,word_explain,word_spelling));
+    }
+
+    @FXML
+    void RemoveWord(ActionEvent event) {
+        String w = input_wordRemove.getText();
+        w.trim();
+        label_sttRemove.setText(HKDIC.dictionaryRemove(w));
+    }
+
+    @FXML
+    public void lookupSearch() {
+        String target = input_word.getText();
+        Word word = HKDIC.dictionaryLookup(target);
+        explain_content.setText(word.toString());
+        if(target.isEmpty() || target == null) explain_content.clear();
     }
 
     @Override
@@ -176,6 +195,19 @@ public class Controller implements Initializable {
                 }
             }
         });
+//        input_wordEdit.setOnKeyPressed(new EventHandler<KeyEvent>() {
+//            @Override
+//            public void handle(KeyEvent event) {
+//                if (event.getCode() == KeyCode.ENTER) {
+//                    String word_target = input_wordEdit.getText();
+//                    if(HKDIC.dictionaryLookup(word_target).getWordExplain().equals("Not found!")) {
+//                        text_explainEdit.setText("This word is not already existed, remember to add it before editing");
+//                    } else {
+//                        text_explainEdit.setText(HKDIC.dictionaryLookup(word_target).getWordExplain());
+//                    }
+//                }
+//            }
+//        });
 
     }
 

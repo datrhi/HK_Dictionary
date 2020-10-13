@@ -3,20 +3,35 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="dd8b16cf-5e9e-443b-b4f5-3f35e9e180cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryCommandline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryCommandline.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Dictionary/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Dictionary/Word.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dictionaries.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/UI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/UI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/Controller/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Controller/Controller$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/Controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Controller/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/Dictionary/DictionaryCommandline.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Dictionary/DictionaryCommandline.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/Dictionary/DictionaryManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Dictionary/DictionaryManagement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/Dictionary/Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Dictionary/Word.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dictionaries.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uetdic.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,11 +61,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BTL_OOP/tham khao/uet-dictionary-master" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -102,6 +113,18 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="184" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602326109743">
       <screen x="0" y="0" width="1458" height="864" />
@@ -112,35 +135,31 @@
     </state>
     <state x="535" y="116" key="#com.intellij.ide.util.MemberChooser/0.0.1458.864@0.0.1458.864" timestamp="1602486590059" />
     <state x="564" y="112" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1602521668739" />
-    <state x="537" y="181" key="FileChooserDialogImpl" timestamp="1602573624214">
+    <state x="537" y="181" key="FileChooserDialogImpl" timestamp="1602518628094">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="510" y="187" key="FileChooserDialogImpl/0.0.1458.864@0.0.1458.864" timestamp="1602484820647" />
-    <state x="537" y="181" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1602573624214" />
-    <state width="1493" height="125" key="GridCell.Tab.0.bottom" timestamp="1602578203560">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="537" y="181" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1602518628094" />
+    <state width="1415" height="150" key="GridCell.Tab.0.bottom" timestamp="1602576398726">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="150" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1602488381646" />
-    <state width="1493" height="125" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1602578203560" />
-    <state width="1493" height="125" key="GridCell.Tab.0.center" timestamp="1602578203559">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1415" height="150" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1602576398726" />
+    <state width="1493" height="125" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1602555467472" />
+    <state width="1415" height="150" key="GridCell.Tab.0.center" timestamp="1602576398726">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="150" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1602488381646" />
-    <state width="1493" height="125" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1602578203559" />
-    <state width="1493" height="125" key="GridCell.Tab.0.left" timestamp="1602578203559">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1415" height="150" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1602576398726" />
+    <state width="1493" height="125" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1602555467472" />
+    <state width="1415" height="150" key="GridCell.Tab.0.left" timestamp="1602576398726">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="150" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1602488381646" />
-    <state width="1493" height="125" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1602578203559" />
-    <state width="1493" height="125" key="GridCell.Tab.0.right" timestamp="1602578203560">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1415" height="150" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1602576398726" />
+    <state width="1493" height="125" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1602555467472" />
+    <state width="1415" height="150" key="GridCell.Tab.0.right" timestamp="1602576398726">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="150" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1602488381646" />
-    <state width="1493" height="125" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1602578203560" />
-    <state x="277" y="0" key="SettingsEditor" timestamp="1602555623453">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="277" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1602555623453" />
+    <state width="1415" height="150" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1602576398726" />
+    <state width="1493" height="125" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1602555467472" />
     <state x="478" y="121" width="579" height="592" key="find.popup" timestamp="1602337391503">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
