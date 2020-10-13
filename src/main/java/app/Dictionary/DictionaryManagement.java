@@ -18,8 +18,15 @@ import java.util.TreeSet;
 
 public class DictionaryManagement extends Dictionary {
 
-    public void insertWord(Word word) {
-        dictionary.add(word);
+    public String insertWord(String word_target,String word_spelling,String word_explain) {
+        if (word_target.equals("")) return "Type word target!";
+        if (dictionary.contains(new Word(word_target))) return "Can not be added";
+        if (word_spelling.equals("")) return "Type word spelling with this form : /word_spelling/";
+        if (word_explain.equals("")) return "Type word explain";
+        Word w = new Word(word_target,word_explain,word_spelling);
+        dictionary.add(w);
+        if (removedWord.contains(w)) removedWord.remove(w);
+        return "OK";
     }
 
 
@@ -72,8 +79,6 @@ public class DictionaryManagement extends Dictionary {
     }
 
     public String dictionaryRemove(String word) {
-        word = word.trim();
-        word.replaceAll("/t", "");
         Word w = new Word(word);
         if (word.equals("")) return "Type a word";
         if (!dictionary.contains(w)) return "Not found!";
@@ -129,5 +134,16 @@ public class DictionaryManagement extends Dictionary {
                 s.setWordExplain(word_explain);
             }
         }
+    }
+    public String dictionaryEdit2(String word_target, String word_explain,String word_spelling) {
+        if (word_target.equals("")) return "Type word target!";
+        if (!dictionary.contains(new Word(word_target))) return "Please add before edit it";
+        if (word_spelling.equals("") || (!word_spelling.startsWith("/")||!word_spelling.endsWith("/"))) return "Form spelling is /word_spelling/";
+        if (word_explain.equals("")) return "Type word explain";
+        Word w = dictionaryLookup(word_target);
+        w.setWordExplain(word_explain);
+        w.setWord_spelling(word_spelling);
+        if (removedWord.contains(w)) removedWord.remove(w);
+        return "OK";
     }
 }
