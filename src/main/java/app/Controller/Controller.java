@@ -35,6 +35,9 @@ public class Controller implements Initializable {
     private Button btn_saveEdit;
 
     @FXML
+    private Button btn_saveRemove;
+
+    @FXML
     private ToggleButton btn_fvr;
 
     @FXML
@@ -44,13 +47,16 @@ public class Controller implements Initializable {
     private TextField input_wordEdit;
 
     @FXML
+    private TextField input_word;
+
+    @FXML
     private TextArea text_explain;
 
     @FXML
     private TextArea text_explainEdit;
 
     @FXML
-    private TextField input_word;
+    private TextField input_wordRemove;
 
     @FXML
     private ListView<String> list_fvr = new ListView<String>();
@@ -67,7 +73,7 @@ public class Controller implements Initializable {
     @FXML
     void addListSearch() {
         String target = input_word.getText();
-        if(!target.isEmpty()) {
+        if(!target.isEmpty() || target != null) {
             list_search.getItems().setAll(HKDIC.dictionarySearcher(target));
         }
         else{
@@ -77,23 +83,44 @@ public class Controller implements Initializable {
 
     @FXML
     void selectFromListSearch(MouseEvent event) {
-        String list_search_word = list_search.getSelectionModel().getSelectedItem();
-        if(!list_search_word.isEmpty()) {
-            Word word = HKDIC.dictionaryLookup(list_search_word);
+        String newWord = list_search.getSelectionModel().getSelectedItem();
+        if(!newWord.isEmpty() || newWord != null) {
+            Word word = HKDIC.dictionaryLookup(newWord);
             explain_content.setText(word.toString());
         }
     }
 
     @FXML
     void AddNewWord(ActionEvent event) {
-
+        String word_target = input_wordAdd.getText();
+        word_target = word_target.trim();
+        String word_explain = text_explain.getText();
+        word_explain = word_explain.trim();
+        Word word = new Word(word_target, word_explain);
+        HKDIC.insertWord(word);
     }
 
+    @FXML
+    void EditWord(ActionEvent event) {
+        String word_target = input_wordEdit.getText();
+        word_target = word_target.trim();
+        String word_explain = text_explainEdit.getText();
+        word_explain = word_explain.trim();
+        HKDIC.dictionaryEdit(word_target, word_explain);
+    }
+
+    @FXML
+    void RemoveWord(ActionEvent event) {
+        String w = input_wordRemove.getText();
+        HKDIC.dictionaryRemove(w);
+    }
+
+    @FXML
     public void lookupSearch() {
         String target = input_word.getText();
         Word word = HKDIC.dictionaryLookup(target);
         explain_content.setText(word.toString());
-        if(target.isEmpty()) explain_content.clear();
+        if(target.isEmpty() || target == null) explain_content.clear();
     }
 
     @Override

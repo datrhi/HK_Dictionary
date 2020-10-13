@@ -18,6 +18,10 @@ import java.util.TreeSet;
 
 public class DictionaryManagement extends Dictionary {
 
+    public void insertWord(Word word) {
+        dictionary.add(word);
+    }
+
 
     public void insertFromCommandline() {
 
