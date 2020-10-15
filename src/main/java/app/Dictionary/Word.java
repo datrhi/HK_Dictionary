@@ -5,12 +5,17 @@ public class Word implements Comparable<Word> {
     private String word_target;
     private String word_explain;
     private String word_spelling;
-
     private boolean isFavor;
+
+    /**  Kiem tra co phai tu yeu thich khong
+     *
+     * @return True: tu yeu thich. False: ko phai tu yeu thich
+     */
     public boolean isFavor() {
         return isFavor;
     }
-    //constructor
+
+    /**------------ Phương thức khởi tạo. ---------------*/
     Word() {
         word_target = "";
         word_explain = "";
@@ -35,8 +40,11 @@ public class Word implements Comparable<Word> {
     Word(String word_target) {
         this.word_target = word_target;
     }
+    //------------------ End. ---------------------------//
 
-    //getter & setter
+
+
+    /**----------------- Setter & Getter. ------------------*/
     public void setWordTarget(String word_target) {
         this.word_target = word_target;
     }
@@ -64,12 +72,22 @@ public class Word implements Comparable<Word> {
     public void setFavor(boolean favor) {
         isFavor = favor;
     }
+    //------------ End. -----------------//
 
+
+
+    /**   So sánh.
+     *
+     * @param word từ
+     */
     @Override
     public int compareTo(Word word) {
         return this.getWordTarget().compareToIgnoreCase(word.getWordTarget());
     }
 
+    /**
+     *   thông tin 1 từ khi dc in ra.
+     */
     public String toString() {
         return getWordTarget() + "    " + getWord_spelling()+"\n" + getWordExplain() + "\n";
     }

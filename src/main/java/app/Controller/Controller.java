@@ -130,6 +130,7 @@ public class Controller implements Initializable {
             explain_content.setText(word.toString());
             if (HKDIC.history.contains(target)) HKDIC.history.remove(target);
             HKDIC.history.addFirst(target);
+            btn_fvr.setSelected(word.isFavor());
         }
     }
     //-End.-//
@@ -166,10 +167,14 @@ public class Controller implements Initializable {
 
     @FXML
     void EditWord() {
-        String word_target = list_searchEdit.getSelectionModel().getSelectedItem().trim();
+        String word_target = input_wordEdit.getText().trim();
         String word_explain = text_explainEdit.getText().trim();
         String word_spelling = text_spellingEdit.getText().trim();
         label_sttEdit.setText(HKDIC.dictionaryEdit2(word_target,word_explain,word_spelling));
+        input_wordEdit.clear();
+        text_spellingEdit.clear();
+        text_explainEdit.clear();
+        list_searchEdit.getItems().clear();
     }
     //-End.-//
 
@@ -181,10 +186,9 @@ public class Controller implements Initializable {
         String word_explain = text_explain.getText().trim();
         String word_spelling = text_spelling.getText().trim();
         label_stt.setText(HKDIC.insertWord(word_target,word_spelling,word_explain));
-        if(word_target.isEmpty()){
-            text_spelling.clear();
-            text_explain.clear();
-        }
+        input_wordAdd.clear();
+        text_spelling.clear();
+        text_explain.clear();
     }
     //-End.-//
 
@@ -214,16 +218,22 @@ public class Controller implements Initializable {
         String target = input_wordRemove.getText().trim();
         label_sttRemove.setText(HKDIC.dictionaryRemove(target));
         list_fvr.getItems().remove(target);
+        input_wordRemove.clear();
+        list_searchRemove.getItems().clear();
     }
     //-End.//
+
 
     /**---------------------- Favorite List. -------------------------*/
     @FXML
     void addFavorite() {
         list_fvr.getItems().clear();
+        list_fvr.getItems().setAll(HKDIC.favor);
+        /*
         for (String w : HKDIC.favor) {
             list_fvr.getItems().add(w);
-        }
+        }*/
+        //list_fvr.getItems().setAll(HKDIC.favor);
     }
 
     @FXML
@@ -248,9 +258,11 @@ public class Controller implements Initializable {
     @FXML
     void addHistory() {
         list_history.getItems().clear();
+        /*
         for (String w : HKDIC.history) {
             list_history.getItems().add(w);
-        }
+        }*/
+        list_history.getItems().setAll(HKDIC.history);
     }
 
     @FXML
@@ -280,7 +292,9 @@ public class Controller implements Initializable {
             } else {
                 HKDIC.favor.remove(target);
             }
+            //btn_fvr.setSelected(false);
         }));
+
         input_word.setOnKeyPressed(new EventHandler<KeyEvent>() {
             public void handle(KeyEvent keyEvent) {
                 if (keyEvent.getCode() == KeyCode.ENTER) {

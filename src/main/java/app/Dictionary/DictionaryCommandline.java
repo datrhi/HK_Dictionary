@@ -10,6 +10,9 @@ import java.util.TreeSet;
 
 public class DictionaryCommandline extends DictionaryManagement {
 
+    /**
+     *  In tat ca cac tu trong tu dien.
+     */
     public static void showAllWords()
     {
         System.out.printf("No        | English             | Vietnamese\n\n");
@@ -17,10 +20,15 @@ public class DictionaryCommandline extends DictionaryManagement {
         for (Word w : dictionary)
         {
             index++;
-            System.out.printf("%-10d| %-20s| %s\n", index, w.getWordTarget(), w.getWordExplain());
+            System.out.printf("%-10d| %-20s| %s\n\n", index, w.getWordTarget(), w.getWordExplain());
         }
     }
 
+    /**   Tim cac tu tuong tu.
+     *
+     * @param word từ tiếng anh
+     * @return arraylist các từ tương tự
+     */
     public ArrayList<String> dictionarySearcher(String word) {
         word = word.trim();
         Word w = new Word(word);
@@ -34,29 +42,88 @@ public class DictionaryCommandline extends DictionaryManagement {
         return listSearch;
     }
 
+
+
+    public static void instruction()
+    {
+        System.out.print("WELLCOME !!!\n");
+        System.out.print("[0] Instruction\n");
+        System.out.print("[1] Lookup\n[2] Search a word\n[3] Show All Words\n");
+        System.out.print("[4] Add a word\n[5] Remove a word\n[6] Edit a word\n[7] Export to file\n[8] Exit\n");
+    }
+
     public void dictionaryBasic() {
         insertFromCommandline();
         showAllWords();
     }
 
-    public void dictionaryAdvanced() throws IOException {
-        insertFromFile2();
-        showAllWords();
-        String word;
+    public static void dictionaryAdvanced( ) throws IOException
+    {
+        instruction();
+        DictionaryCommandline dc = new DictionaryCommandline();
+        dc.insertFromFile2();
+        int input;
+        String w,w1,w2;
         Scanner sc = new Scanner(System.in);
-        // Action sc;
-        do {
-            System.out.println("Nhap tu muon tim:");
-            word = sc.nextLine();
-            System.out.println(dictionaryLookup(word).toString());
-        }while (!word.equals("q"));
-        System.out.println("Nhap tu muon sua:");
-        String word_target = sc.nextLine();
-        String word_explain = sc.nextLine();
-        dictionaryEdit(word_target, word_explain);
-        System.out.println("Nhap tu muon tim:");
-        word = sc.nextLine();
-        System.out.println(dictionaryLookup(word).toString());
+        boolean exit = false;
+        while (!exit)
+        {
+            input = sc.nextInt();
+            sc.nextLine();
+            switch (input)
+            {
+                case 0 :
+                    instruction();
+                    break;
+                case 1 :
+                    System.out.print("- Lookup -\n Write a word: ");
+                    w = sc.nextLine();
+                    if (!dc.dictionaryLookup(w).getWordExplain().equals("Not found"))
+                        System.out.println(dc.dictionaryLookup(w).toString());
+                    else System.out.println(w);
+                    break;
+                case 2 :
+                    System.out.print("- Search -\n Write a word: ");
+                    w = sc.nextLine();
+                    ArrayList<String> arrayList = dc.dictionarySearcher(w);
+                    for (String s : arrayList) System.out.println(s);
+                    break;
+                case 3 :
+                    showAllWords();
+                    break;
+                case 4 :
+                    System.out.print("- Add -\n Write a word in english: ");
+                    w = sc.nextLine();
+                    System.out.print(" Write the spelling of word: ");
+                    w1 = sc.nextLine();
+                    System.out.print(" Write the meaning of word: ");
+                    w2 = sc.nextLine();
+                    System.out.println(dc.insertWord(w, w1, w2));
+                    break;
+                case 5 :
+                    System.out.print("- Remove -\nWrite a word: ");
+                    w = sc.nextLine();
+                    System.out.println(dc.dictionaryRemove(w));
+                    break;
+                case 6 :
+                    System.out.print("- Edit -\n Write a word in english: ");
+                    w = sc.nextLine();
+                    System.out.print(" Write the spelling of word: ");
+                    w1 = sc.nextLine();
+                    System.out.print(" Write the meaning of word: ");
+                    w2 = sc.nextLine();
+                    System.out.println(dc.dictionaryEdit2(w,w2,w1));
+                    break;
+                case 7 :
+                    dc.dictionaryExportToFile();
+                    System.out.println("- Export -\n Export Successfully!");
+                    break;
+                case 8 :
+                    exit = true;
+                    break;
+            }
+
+        }
     }
 
     public static void main(String[] args) throws IOException {

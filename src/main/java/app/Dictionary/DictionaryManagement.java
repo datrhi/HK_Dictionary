@@ -18,6 +18,14 @@ import java.util.TreeSet;
 
 public class DictionaryManagement extends Dictionary {
 
+
+    /**   Thêm từ vào từ điển hiện tại.
+     *
+     * @param word_target: từ tiếng anh
+     * @param word_spelling: cách phát âm
+     * @param word_explain: nghĩa tiếng việt
+     * @return status kiểu string
+     */
     public String insertWord(String word_target,String word_spelling,String word_explain) {
         if (word_target.equals("")) return "Type word target!";
         if (dictionary.contains(new Word(word_target))) return "Can not be added";
@@ -30,6 +38,9 @@ public class DictionaryManagement extends Dictionary {
     }
 
 
+    /**
+     *  Them tư bang cach su dung commandline.
+     */
     public void insertFromCommandline() {
 
         Scanner sc = new Scanner(System.in);
@@ -55,6 +66,7 @@ public class DictionaryManagement extends Dictionary {
         }
     }
 
+
     public void insertFromFile1() throws IOException {
         File file = new File("dictionaries.txt");
         Scanner read_file = new Scanner(file);
@@ -66,6 +78,12 @@ public class DictionaryManagement extends Dictionary {
         read_file.close();
     }
 
+
+    /**    Tìm kiếm chính xác từ muốn kiếm
+     *
+     * @param word là tu tiếng anh muốn tìm kiểu String
+     * @return từ muốn tìm kiểu Word
+     */
     public Word dictionaryLookup(String word) {
         word = word.trim();
         Word w = new Word(word);
@@ -78,6 +96,12 @@ public class DictionaryManagement extends Dictionary {
         return new Word(word, "Not found!");
     }
 
+
+    /**  Xóa 1 Word khỏi từ điển hiện tại
+     *
+     * @param word từ tiếng anh muốn xóa kiểu String
+     * @return status kiểu String
+     */
     public String dictionaryRemove(String word) {
         Word w = new Word(word);
         if (word.equals("")) return "Type a word";
@@ -89,12 +113,22 @@ public class DictionaryManagement extends Dictionary {
         return "Done!";
     }
 
+
+    /**   Xuất ra file.
+     *
+     * @throws IOException
+     */
     public void dictionaryExportToFile() throws IOException {
         FileWriter fw = new FileWriter("dictionary.txt");
         for (Word w : dictionary) fw.write(w.toString());
         fw.close();
     }
 
+
+    /**   Insert từ điển từ file.
+     *
+     * @throws IOException
+     */
     public void insertFromFile2() throws IOException {
         try {
             String file = new String(Files.readAllBytes(Paths.get("AnhViet.txt")), StandardCharsets.UTF_8);
@@ -122,6 +156,13 @@ public class DictionaryManagement extends Dictionary {
         }
     }
 
+
+    /**   Edit một Word trong từ điển.
+     *
+     * @param word_target tư tiếng anh
+     * @param word_explain nghia tieng viet
+     * @param word_spelling cacn danh van
+     */
     public void dictionaryEdit(String word_target, String word_explain, String word_spelling) {
         word_target = word_target.trim();
         word_explain = word_explain.trim();
@@ -137,7 +178,7 @@ public class DictionaryManagement extends Dictionary {
         }
     }
 
-    public void dictionaryEdit(String word_target, String word_explain) {
+    public String dictionaryEdit(String word_target, String word_explain) {
         word_target = word_target.trim();
         word_explain = word_explain.trim();
         Word word = new Word(word_target, word_explain);
@@ -149,7 +190,17 @@ public class DictionaryManagement extends Dictionary {
                 s.setWordExplain(word_explain);
             }
         }
+        return word.toString();
     }
+
+
+    /**   Edit một Word trong tu dien.
+     *
+     * @param word_target tu tieng anh
+     * @param word_explain nghia tieng viet
+     * @param word_spelling cach danh van
+     * @return status
+     */
     public String dictionaryEdit2(String word_target, String word_explain,String word_spelling) {
         if (word_target.equals("")) return "Type word target!";
         if (!dictionary.contains(new Word(word_target))) return "Please add before edit it";
@@ -161,4 +212,6 @@ public class DictionaryManagement extends Dictionary {
         if (removedWord.contains(w)) removedWord.remove(w);
         return "OK";
     }
+
+
 }
