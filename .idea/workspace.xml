@@ -23,25 +23,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd8b16cf-5e9e-443b-b4f5-3f35e9e180cb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Dictionary/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Dictionary/Dictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Dictionary/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Dictionary/Word.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/UI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FXML/UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/UI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/Controller/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Controller/Controller$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/Controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Controller/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/Dictionary/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Dictionary/Dictionary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/Dictionary/DictionaryCommandline.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Dictionary/DictionaryCommandline.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/Dictionary/DictionaryManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Dictionary/DictionaryManagement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/Dictionary/Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Dictionary/Word.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
@@ -72,10 +67,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="C:/Program Files/Java/freetts/freetts-1.2/lib/mbrola.jar" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/freetts-1.2.2-bin/freetts-1.2/lib" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -151,35 +150,56 @@
     </state>
     <state x="535" y="116" key="#com.intellij.ide.util.MemberChooser/0.0.1458.864@0.0.1458.864" timestamp="1602598117008" />
     <state x="564" y="112" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1602521668739" />
-    <state x="537" y="181" key="FileChooserDialogImpl" timestamp="1603269190513">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="613" y="136" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1603287640426">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state x="510" y="187" key="FileChooserDialogImpl/0.0.1458.864@0.0.1458.864" timestamp="1602592321096" />
+    <state x="613" y="136" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1458.864@0.0.1458.864" timestamp="1603287640426" />
+    <state x="513" y="180" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1603287672725">
+      <screen x="0" y="0" width="1458" height="864" />
+    </state>
+    <state x="513" y="180" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1458.864@0.0.1458.864" timestamp="1603287672725" />
+    <state x="578" y="321" key="DetectedRootsChooserDialog" timestamp="1603287618501">
+      <screen x="0" y="0" width="1458" height="864" />
+    </state>
+    <state x="578" y="321" key="DetectedRootsChooserDialog/0.0.1458.864@0.0.1458.864" timestamp="1603287618501" />
+    <state x="510" y="187" key="FileChooserDialogImpl" timestamp="1603287700552">
+      <screen x="0" y="0" width="1458" height="864" />
+    </state>
+    <state x="510" y="187" key="FileChooserDialogImpl/0.0.1458.864@0.0.1458.864" timestamp="1603287700552" />
     <state x="537" y="181" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1603269190513" />
-    <state width="1493" height="190" key="GridCell.Tab.0.bottom" timestamp="1603269245312">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1415" height="150" key="GridCell.Tab.0.bottom" timestamp="1603290019382">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="150" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1602599467411" />
+    <state width="1415" height="150" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1603290019382" />
     <state width="1493" height="190" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1603269245312" />
-    <state width="1493" height="190" key="GridCell.Tab.0.center" timestamp="1603269245311">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1415" height="150" key="GridCell.Tab.0.center" timestamp="1603290019382">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="150" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1602599467411" />
+    <state width="1415" height="150" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1603290019382" />
     <state width="1493" height="190" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1603269245311" />
-    <state width="1493" height="190" key="GridCell.Tab.0.left" timestamp="1603269245311">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1415" height="150" key="GridCell.Tab.0.left" timestamp="1603290019382">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="150" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1602599467411" />
+    <state width="1415" height="150" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1603290019382" />
     <state width="1493" height="190" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1603269245311" />
-    <state width="1493" height="190" key="GridCell.Tab.0.right" timestamp="1603269245312">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1415" height="150" key="GridCell.Tab.0.right" timestamp="1603290019382">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="150" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1602599467411" />
+    <state width="1415" height="150" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1603290019382" />
     <state width="1493" height="190" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1603269245312" />
-    <state x="277" y="0" key="SettingsEditor" timestamp="1603269206378">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="260" y="87" key="Maven.ArtifactSearchDialog" timestamp="1603289504669">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
+    <state x="260" y="87" key="Maven.ArtifactSearchDialog/0.0.1458.864@0.0.1458.864" timestamp="1603289504669" />
+    <state x="210" y="6" key="SettingsEditor" timestamp="1603289449883">
+      <screen x="0" y="0" width="1458" height="864" />
+    </state>
+    <state x="210" y="6" key="SettingsEditor/0.0.1458.864@0.0.1458.864" timestamp="1603289449883" />
     <state x="277" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1603269206378" />
+    <state x="512" y="317" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1603287541688">
+      <screen x="0" y="0" width="1458" height="864" />
+    </state>
+    <state x="512" y="317" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1458.864@0.0.1458.864" timestamp="1603287541688" />
     <state x="478" y="121" width="579" height="592" key="find.popup" timestamp="1602337391503">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

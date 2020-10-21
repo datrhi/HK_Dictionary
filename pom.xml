@@ -7,6 +7,52 @@
     <groupId>org.example</groupId>
     <artifactId>uetdic</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>cmu_time_awb</groupId>
+            <artifactId>cmu_time_awb</artifactId>
+            <scope>system</scope>
+            <version>1.2.2</version>
+            <systemPath>${basedir}/libs/cmu_time_awb.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>cmu_us_kal</groupId>
+            <artifactId>cmu_us_kal</artifactId>
+            <scope>system</scope>
+            <version>1.2.2</version>
+            <systemPath>${basedir}/libs/cmu_us_kal.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>en_us</groupId>
+            <artifactId>en_us</artifactId>
+            <scope>system</scope>
+            <version>1.2.2</version>
+            <systemPath>${basedir}/libs/en_us.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>freetts-jsapi10</groupId>
+            <artifactId>freetts-jsapi10</artifactId>
+            <scope>system</scope>
+            <version>1.2.2</version>
+            <systemPath>${basedir}/libs/freetts-jsapi10.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>freetts</groupId>
+            <artifactId>freetts</artifactId>
+            <scope>system</scope>
+            <version>1.2.2</version>
+            <systemPath>${basedir}/libs/freetts.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>mbrola</groupId>
+            <artifactId>mbrola</artifactId>
+            <scope>system</scope>
+            <version>1.2.2</version>
+            <systemPath>${basedir}/libs/mbrola.jar</systemPath>
+        </dependency>
+
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>

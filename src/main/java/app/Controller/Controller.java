@@ -1,9 +1,9 @@
 package app.Controller;
 
-import app.Dictionary.*;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
+import app.Dictionary.DictionaryCommandline;
+import app.Dictionary.Word;
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,16 +11,12 @@ import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.util.Callback;
-import sun.awt.HKSCS;
-//import android.widget.ArrayAdapter;
+
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.List;
-import com.sun.speech.freetts.Voice;
-import com.sun.speech.freetts.VoiceManager;
+
+//import android.widget.ArrayAdapter;
 
 public class Controller implements Initializable {
 
