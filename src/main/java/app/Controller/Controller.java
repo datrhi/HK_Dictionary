@@ -12,8 +12,12 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ResourceBundle;
 
 //import android.widget.ArrayAdapter;
@@ -33,13 +37,16 @@ public class Controller implements Initializable {
     private Button btn_saveEdit;
 
     @FXML
-    private Button speak;
+    private Button btn_speak;
 
     @FXML
     private Button btn_saveRemove;
 
     @FXML
     private ToggleButton btn_fvr;
+
+    @FXML
+    private ToggleButton btn_API;
 
     @FXML
     private TextArea explain_content;
@@ -76,6 +83,8 @@ public class Controller implements Initializable {
 
     private static DictionaryCommandline HKDIC = new DictionaryCommandline();
 
+    //private
+
     @FXML
     private ListView<String> list_searchEdit;
 
@@ -103,13 +112,25 @@ public class Controller implements Initializable {
 
     /**---------------------- Lookup. -------------------------*/
     @FXML
-    public void lookupSearch() {
-        String target = input_word.getText().trim();
-        Word word = HKDIC.dictionaryLookup(target);
-        explain_content.setText(word.toString());
-        if (HKDIC.history.contains(target)) HKDIC.history.remove(target);
-        HKDIC.history.addFirst(target);
-        btn_fvr.setSelected(word.isFavor());
+    public void lookupSearch() throws IOException {
+        if (btn_API.isSelected()) {
+            String target = input_word.getText().trim();
+            Word word = HKDIC.dictionaryLookup(target);
+            String s = translate("en", "vi", target);
+            explain_content.setText(s);
+            if (HKDIC.history.contains(target)) HKDIC.history.remove(target);
+            HKDIC.history.addFirst(target);
+            btn_fvr.setSelected(word.isFavor());
+        }
+        else {
+            String target = input_word.getText().trim();
+            Word word = HKDIC.dictionaryLookup(target);
+            explain_content.setText(word.toString());
+            if (HKDIC.history.contains(target)) HKDIC.history.remove(target);
+            HKDIC.history.addFirst(target);
+            btn_fvr.setSelected(word.isFavor());
+        }
+
     }
 
     @FXML
@@ -243,20 +264,23 @@ public class Controller implements Initializable {
             text_explainFvr.setText(word.toString());
         }
     }
-
-    @FXML
-    private void speakBtn() {
-        voice.speak(input_word.getText());
-        //System.out.print(input_word.getText());
-    }
-    /*
+     /*
     @FXML
     void RemoveWordFavorite() {
         String newWord = list_fvr.getSelectionModel().getSelectedItem().trim();
         Word t
      }
      */
-    //-End.//
+    //-End.-//
+
+
+    /**------------------------ Speak ------------------------*/
+    @FXML
+    private void speakBtn() {
+        voice.speak(input_word.getText());
+        //System.out.print(input_word.getText());
+    }
+    //-End.-//
 
 
     /**---------------------- Historic List. -------------------------*/
@@ -278,6 +302,29 @@ public class Controller implements Initializable {
             text_explainHistory.setText(word.toString());
         }
     }
+
+    /**------------------------ Translate  ------------------------*/
+
+    public String translate(String langFrom, String langTo, String text) throws IOException {
+        // INSERT YOU URL HERE
+        String urlStr = "https://script.google.com/macros/s/AKfycbw2qKkvobro8WLNZUKi2kGwGwEO4W8cBavcKqcuCIGhGBBtVts/exec" +
+                "?q=" + URLEncoder.encode(text, "UTF-8")
+                + "&target=" + langTo +
+                "&source=" + langFrom;
+        URL url = new URL(urlStr);
+        StringBuilder response = new StringBuilder();
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestProperty("User-Agent", "Mozilla/5.0");
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+        return response.toString();
+    }
+    //-End.-//
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -313,7 +360,11 @@ public class Controller implements Initializable {
         input_word.setOnKeyPressed(new EventHandler<KeyEvent>() {
             public void handle(KeyEvent keyEvent) {
                 if (keyEvent.getCode() == KeyCode.ENTER) {
-                    lookupSearch();
+                    try {
+                        lookupSearch();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });

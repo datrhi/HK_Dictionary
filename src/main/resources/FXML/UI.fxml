@@ -77,14 +77,15 @@
                                              </image>
                                           </ImageView>
                                        </graphic></ToggleButton>
-                                    <Button fx:id="speak" layoutX="279.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#speakBtn" prefHeight="37.0" prefWidth="44.0">
+                                    <Button fx:id="btn_speak" layoutX="279.0" layoutY="16.0" mnemonicParsing="false" onMouseClicked="#speakBtn" prefHeight="36.0" prefWidth="44.0">
                                        <graphic>
-                                          <ImageView fitHeight="25.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../../../../uetdic/src/main/resources/icons/2313-200-1.png" />
+                                                <Image url="@../icons/volume.png" />
                                              </image>
                                           </ImageView>
                                        </graphic></Button>
+                                    <ToggleButton fx:id="btn_API" layoutX="225.0" layoutY="16.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="47.0" text="API" />
                                  </children>
                               </AnchorPane>
                           </items>

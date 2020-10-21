@@ -73,7 +73,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/freetts-1.2.2-bin/freetts-1.2/lib" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -167,35 +167,35 @@
     </state>
     <state x="510" y="187" key="FileChooserDialogImpl/0.0.1458.864@0.0.1458.864" timestamp="1603287700552" />
     <state x="537" y="181" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1603269190513" />
-    <state width="1415" height="150" key="GridCell.Tab.0.bottom" timestamp="1603290019382">
-      <screen x="0" y="0" width="1458" height="864" />
+    <state width="1493" height="190" key="GridCell.Tab.0.bottom" timestamp="1603296714667">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1415" height="150" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1603290019382" />
-    <state width="1493" height="190" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1603269245312" />
-    <state width="1415" height="150" key="GridCell.Tab.0.center" timestamp="1603290019382">
-      <screen x="0" y="0" width="1458" height="864" />
+    <state width="1493" height="190" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1603296714667" />
+    <state width="1493" height="190" key="GridCell.Tab.0.center" timestamp="1603296714666">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1415" height="150" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1603290019382" />
-    <state width="1493" height="190" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1603269245311" />
-    <state width="1415" height="150" key="GridCell.Tab.0.left" timestamp="1603290019382">
-      <screen x="0" y="0" width="1458" height="864" />
+    <state width="1493" height="190" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1603296714666" />
+    <state width="1493" height="190" key="GridCell.Tab.0.left" timestamp="1603296714666">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1415" height="150" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1603290019382" />
-    <state width="1493" height="190" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1603269245311" />
-    <state width="1415" height="150" key="GridCell.Tab.0.right" timestamp="1603290019382">
-      <screen x="0" y="0" width="1458" height="864" />
+    <state width="1493" height="190" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1603296714666" />
+    <state width="1493" height="190" key="GridCell.Tab.0.right" timestamp="1603296714666">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1415" height="150" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1603290019382" />
-    <state width="1493" height="190" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1603269245312" />
+    <state width="1493" height="190" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1603296714666" />
     <state x="260" y="87" key="Maven.ArtifactSearchDialog" timestamp="1603289504669">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
     <state x="260" y="87" key="Maven.ArtifactSearchDialog/0.0.1458.864@0.0.1458.864" timestamp="1603289504669" />
-    <state x="210" y="6" key="SettingsEditor" timestamp="1603289449883">
-      <screen x="0" y="0" width="1458" height="864" />
+    <state x="277" y="0" key="SettingsEditor" timestamp="1603296558164">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="210" y="6" key="SettingsEditor/0.0.1458.864@0.0.1458.864" timestamp="1603289449883" />
-    <state x="277" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1603269206378" />
+    <state x="277" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1603296558164" />
     <state x="512" y="317" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1603287541688">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
