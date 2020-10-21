@@ -19,6 +19,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.List;
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
 
 public class Controller implements Initializable {
 
@@ -33,6 +35,9 @@ public class Controller implements Initializable {
 
     @FXML
     private Button btn_saveEdit;
+
+    @FXML
+    private Button speak;
 
     @FXML
     private Button btn_saveRemove;
@@ -95,6 +100,9 @@ public class Controller implements Initializable {
 
     @FXML
     private Label label_sttRemove;
+
+   VoiceManager vm;
+   Voice voice;
 
 
     /**---------------------- Lookup. -------------------------*/
@@ -206,7 +214,7 @@ public class Controller implements Initializable {
 
     @FXML
     void selectFromListRemove() {
-        String target = list_searchRemove.getSelectionModel().getSelectedItem().trim();
+        String target = list_searchRemove.getSelectionModel().getSelectedItem();
         if(target != null) {
             input_wordRemove.setText(target);
             AddListRemove();
@@ -229,20 +237,21 @@ public class Controller implements Initializable {
     void addFavorite() {
         list_fvr.getItems().clear();
         list_fvr.getItems().setAll(HKDIC.favor);
-        /*
-        for (String w : HKDIC.favor) {
-            list_fvr.getItems().add(w);
-        }*/
-        //list_fvr.getItems().setAll(HKDIC.favor);
     }
 
     @FXML
     void SelectFromListFavorite() {
-        String target = list_fvr.getSelectionModel().getSelectedItem().trim();
+        String target = list_fvr.getSelectionModel().getSelectedItem();
         if(target != null) {
             Word word = HKDIC.dictionaryLookup(target);
             text_explainFvr.setText(word.toString());
         }
+    }
+
+    @FXML
+    private void speakBtn() {
+        voice.speak(input_word.getText());
+        //System.out.print(input_word.getText());
     }
     /*
     @FXML
@@ -267,7 +276,7 @@ public class Controller implements Initializable {
 
     @FXML
     void SelectFromListHistory() {
-        String target = list_history.getSelectionModel().getSelectedItem().trim();
+        String target = list_history.getSelectionModel().getSelectedItem();
         if(target != null) {
             Word word = HKDIC.dictionaryLookup(target);
             text_explainHistory.setText(word.toString());
@@ -276,6 +285,16 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        String voiceName = "kevin16";
+        vm = VoiceManager.getInstance();
+        voice = vm.getVoice("kevin16");
+        if (voice == null) {
+            System.err.println("Cannot find a voice named " + voiceName + ".  Please specify a different voice.");
+        } else {
+            voice.allocate();
+        }
+
         try {
             HKDIC.insertFromFile2();
         } catch (IOException e) {
