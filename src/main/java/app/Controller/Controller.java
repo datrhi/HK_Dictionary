@@ -113,19 +113,24 @@ public class Controller implements Initializable {
     /**---------------------- Lookup. -------------------------*/
     @FXML
     public void lookupSearch() throws IOException {
+        String target = input_word.getText().trim();
         if (btn_API.isSelected()) {
-            String target = input_word.getText().trim();
-            Word word = HKDIC.dictionaryLookup(target);
             String s = translate("en", "vi", target);
-            explain_content.setText(s);
+            if(s.equals(target))
+                explain_content.setText("Not found!");
+            else
+                explain_content.setText(s);
+            Word word = new Word(target);
             if (HKDIC.history.contains(target)) HKDIC.history.remove(target);
             HKDIC.history.addFirst(target);
             btn_fvr.setSelected(word.isFavor());
         }
         else {
-            String target = input_word.getText().trim();
             Word word = HKDIC.dictionaryLookup(target);
-            explain_content.setText(word.toString());
+            if(word.getWordExplain().equals("Not found!"))
+                explain_content.setText(word.getWordExplain());
+            else
+                explain_content.setText(word.toString());
             if (HKDIC.history.contains(target)) HKDIC.history.remove(target);
             HKDIC.history.addFirst(target);
             btn_fvr.setSelected(word.isFavor());
@@ -146,19 +151,33 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    void selectFromListSearch(MouseEvent event) {
+    void selectFromListSearch(MouseEvent event) throws IOException {
         String target = list_search.getSelectionModel().getSelectedItem();
         if(target != null) {
             input_word.setText(target);
-            addListSearch();
-            Word word = HKDIC.dictionaryLookup(target);
-            explain_content.setText(word.toString());
-            if (HKDIC.history.contains(target)) HKDIC.history.remove(target);
-            HKDIC.history.addFirst(target);
-            btn_fvr.setSelected(word.isFavor());
+            if(btn_API.isSelected()) {
+                //addListSearch();
+                String s = translate("en", "vi", target);
+                explain_content.setText(s);
+                Word word = new Word(target);
+                if (HKDIC.history.contains(target)) HKDIC.history.remove(target);
+                HKDIC.history.addFirst(target);
+                btn_fvr.setSelected(word.isFavor());
+            }
+            else {
+               // addListSearch();
+                Word word = HKDIC.dictionaryLookup(target);
+                if(word.getWordExplain().equals("Not found!"))
+                    explain_content.setText(word.getWordExplain());
+                else
+                    explain_content.setText(word.toString());
+                if (HKDIC.history.contains(target)) HKDIC.history.remove(target);
+                HKDIC.history.addFirst(target);
+                btn_fvr.setSelected(word.isFavor());
+            }
         }
     }
-    //-End.-//
+    //------------------------ End. ----------------------------//
 
 
     /**---------------------- Edit. -------------------------*/
@@ -201,10 +220,10 @@ public class Controller implements Initializable {
         text_explainEdit.clear();
         list_searchEdit.getItems().clear();
     }
-    //-End.-//
+    //------------------------ End. ----------------------------//
 
 
-    /**---------------------- Adđ. -------------------------*/
+    /**---------------------- Add. -------------------------*/
     @FXML
     void AddNewWord() {
         String word_target = input_wordAdd.getText().trim();
@@ -215,7 +234,7 @@ public class Controller implements Initializable {
         text_spelling.clear();
         text_explain.clear();
     }
-    //-End.-//
+    //------------------------ End. ----------------------------//
 
     /**---------------------- Remove. -------------------------*/
     @FXML
@@ -246,7 +265,7 @@ public class Controller implements Initializable {
         input_wordRemove.clear();
         list_searchRemove.getItems().clear();
     }
-    //-End.//
+    //------------------------ End. ----------------------------//
 
 
     /**---------------------- Favorite List. -------------------------*/
@@ -257,21 +276,19 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    void SelectFromListFavorite() {
+    void SelectFromListFavorite() throws IOException {
         String target = list_fvr.getSelectionModel().getSelectedItem();
         if(target != null) {
             Word word = HKDIC.dictionaryLookup(target);
-            text_explainFvr.setText(word.toString());
+            if(!word.getWordExplain().equals("Not found!"))
+                text_explainFvr.setText(word.toString());
+            else {
+                String s = translate("en", "vi", target);
+                text_explainFvr.setText(s);
+            }
         }
     }
-     /*
-    @FXML
-    void RemoveWordFavorite() {
-        String newWord = list_fvr.getSelectionModel().getSelectedItem().trim();
-        Word t
-     }
-     */
-    //-End.-//
+    //------------------------ End. ----------------------------//
 
 
     /**------------------------ Speak ------------------------*/
@@ -280,7 +297,7 @@ public class Controller implements Initializable {
         voice.speak(input_word.getText());
         //System.out.print(input_word.getText());
     }
-    //-End.-//
+    //------------------------ End. ----------------------------//
 
 
     /**---------------------- Historic List. -------------------------*/
@@ -295,13 +312,20 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    void SelectFromListHistory() {
+    void SelectFromListHistory() throws IOException {
         String target = list_history.getSelectionModel().getSelectedItem();
         if(target != null) {
             Word word = HKDIC.dictionaryLookup(target);
-            text_explainHistory.setText(word.toString());
+            if(!word.getWordExplain().equals("Not found!"))
+                text_explainHistory.setText(word.toString());
+            else {
+                String s = translate("en", "vi", target);
+                text_explainHistory.setText(s);
+            }
         }
     }
+    //------------------------ End. ----------------------------//
+
 
     /**------------------------ Translate  ------------------------*/
 
@@ -323,7 +347,7 @@ public class Controller implements Initializable {
         in.close();
         return response.toString();
     }
-    //-End.-//
+    //------------------------ End. ----------------------------//
 
 
     @Override
@@ -369,36 +393,4 @@ public class Controller implements Initializable {
             }
         });
     }
-
-    //    input_wordEdit.setOnKeyPressed(new EventHandler<KeyEvent>() {
-//            @Override
-//            public void handle(KeyEvent event) {
-//                if (event.getCode() == KeyCode.ENTER) {
-//                    String word_target = input_wordEdit.getText();
-//                    if(HKDIC.dictionaryLookup(word_target).getWordExplain().equals("Not found!")) {
-//                        text_explainEdit.setText("This word is not already existed, remember to add it before editing");
-//                    } else {
-//                        text_explainEdit.setText(HKDIC.dictionaryLookup(word_target).getWordExplain());
-//                    }
-//                }
-//            }
-//        });
-
-
-
-        //    @FXML
-//    void checkStatus() {
-//        String newWord = input_wordAdd.getText();
-//        newWord.trim();
-//        if (newWord.equals("")) {
-//            label_stt.setText("");
-//            return;
-//        }
-//        if (HKDIC.dictionaryLookup(newWord).getWordExplain().equals("Not found!")) {
-//            label_stt.setText("Can be added");
-//        } else {
-//            label_stt.setText("This word is already existed!");
-//        }
-//    }
-
 }

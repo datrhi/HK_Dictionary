@@ -85,7 +85,14 @@
                                              </image>
                                           </ImageView>
                                        </graphic></Button>
-                                    <ToggleButton fx:id="btn_API" layoutX="225.0" layoutY="16.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="47.0" text="API" />
+                                    <ToggleButton fx:id="btn_API" layoutX="225.0" layoutY="16.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="47.0">
+                                       <graphic>
+                                          <ImageView fitHeight="86.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icons/translate.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></ToggleButton>
                                  </children>
                               </AnchorPane>
                           </items>

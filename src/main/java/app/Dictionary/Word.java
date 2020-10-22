@@ -37,7 +37,7 @@ public class Word implements Comparable<Word> {
         this.word_explain = w.word_explain;
     }
 
-    Word(String word_target) {
+    public Word(String word_target) {
         this.word_target = word_target;
     }
     //------------------ End. ---------------------------//
