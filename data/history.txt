@@ -1,7 +1,4 @@
 oop
-golf
-run away
-run
 go away
 go after
 go about

@@ -1,4 +1,3 @@
-run away
 go after
 go about
 hello

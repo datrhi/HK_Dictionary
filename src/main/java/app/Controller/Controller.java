@@ -266,10 +266,9 @@ public class Controller implements Initializable {
     void RemoveWord() {
         String target = input_wordRemove.getText().trim();
         label_sttRemove.setText(HKDIC.dictionaryRemove(target));
-       // list_fvr.getItems().remove(target);
+        list_fvr.getItems().remove(target);
         input_wordRemove.clear();
         list_searchRemove.getItems().clear();
-
     }
     //------------------------ End. ----------------------------//
 

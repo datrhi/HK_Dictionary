@@ -250,8 +250,7 @@ public class DictionaryManagement extends Dictionary {
         while (sc.hasNextLine()){
             String target = sc.nextLine();
             if(target.equals("")) break;
-            Word removedWord = dictionaryLookup(target);
-            dictionary.remove(removedWord);
+            dictionary.remove(new Word(target));
         }
     }
 
