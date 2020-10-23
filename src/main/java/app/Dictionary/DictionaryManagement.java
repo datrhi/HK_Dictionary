@@ -121,13 +121,13 @@ public class DictionaryManagement extends Dictionary {
      * @throws IOException
      */
     public void dictionaryExportToFile() throws IOException {
-        FileWriter fw = new FileWriter("dictionary.txt");
+        FileWriter fw = new FileWriter("data\\dictionary.txt");
         for (Word w : dictionary) fw.write(w.toString());
         fw.close();
     }
 
     public void dictionaryExportToFile2() throws IOException {
-        FileWriter fw = new FileWriter("history.txt");
+        FileWriter fw = new FileWriter("data\\history.txt");
         for(String w : history ) fw.write(w+"\n");
         fw.close();
         fw = new FileWriter("favor.txt");
@@ -148,7 +148,7 @@ public class DictionaryManagement extends Dictionary {
      */
     public static void insertFromFile2() throws IOException {
         try {
-            String file = new String(Files.readAllBytes(Paths.get("AnhViet.txt")), StandardCharsets.UTF_8);
+            String file = new String(Files.readAllBytes(Paths.get("data\\AnhViet.txt")), StandardCharsets.UTF_8);
             String[] word = file.split("@");
             for (String w : word) {
                 String list[] = w.split("\r?\n", 2);
@@ -176,7 +176,7 @@ public class DictionaryManagement extends Dictionary {
     public static void insertFromFile3() throws IOException
     {
         try {
-            String file = new String(Files.readAllBytes(Paths.get("editedWord.txt")), StandardCharsets.UTF_8);
+            String file = new String(Files.readAllBytes(Paths.get("data\\editedWord.txt")), StandardCharsets.UTF_8);
             String[] word = file.split("@");
             for (String w : word) {
                 String list[] = w.split("\r?\n", 2);
@@ -202,7 +202,7 @@ public class DictionaryManagement extends Dictionary {
         }
         Scanner sc = null;
         insertFromFile2();
-        File file = new File("favor.txt");
+        File file = new File("data\\favor.txt");
         sc = new Scanner(file);
         while (sc.hasNextLine()){
             String target = sc.nextLine();
@@ -213,14 +213,14 @@ public class DictionaryManagement extends Dictionary {
             dictionary.remove(word);
             dictionary.add(word);
         }
-        file = new File("history.txt");
+        file = new File("data\\history.txt");
         sc = new Scanner(file);
         while (sc.hasNextLine()){
             String target = sc.nextLine();
             if(target.equals("")) break;
             history.add(target);
         }
-        file = new File("removedWord.txt");
+        file = new File("data\\removedWord.txt");
         sc = new Scanner(file);
         while (sc.hasNextLine()){
             String target = sc.nextLine();
