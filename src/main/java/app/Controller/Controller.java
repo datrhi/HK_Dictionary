@@ -106,8 +106,8 @@ public class Controller implements Initializable {
     @FXML
     private Label label_sttRemove;
 
-    VoiceManager vm;
-    Voice voice;
+   VoiceManager vm;
+   Voice voice;
 
 
     /**---------------------- Lookup. -------------------------*/
@@ -126,8 +126,7 @@ public class Controller implements Initializable {
             btn_fvr.setSelected(word.isFavor());
         }
         else {
-            //Word word = HKDIC.dictionaryLookup(target);
-            Word word = HKDIC.binaryLookup(0, HKDIC.dictionary.size(), target);
+            Word word = HKDIC.dictionaryLookup(target);
             if(word.getWordExplain().equals("Not found!"))
                 explain_content.setText(word.getWordExplain());
             else
@@ -143,8 +142,7 @@ public class Controller implements Initializable {
     void addListSearch() {
         String target = input_word.getText().trim();
         if(!target.isEmpty()) {
-            //list_search.getItems().setAll(HKDIC.dictionarySearcher(target));
-            list_search.getItems().setAll(HKDIC.binarySearcher(0, HKDIC.dictionary.size(), target));
+            list_search.getItems().setAll(HKDIC.dictionarySearcher(target));
         }
         else{
             list_search.getItems().clear();
@@ -158,6 +156,7 @@ public class Controller implements Initializable {
         if(target != null) {
             input_word.setText(target);
             if(btn_API.isSelected()) {
+                //addListSearch();
                 String s = translate("en", "vi", target);
                 explain_content.setText(s);
                 Word word = new Word(target);
@@ -166,8 +165,8 @@ public class Controller implements Initializable {
                 btn_fvr.setSelected(word.isFavor());
             }
             else {
-                //Word word = HKDIC.dictionaryLookup(target);
-                Word word = HKDIC.binaryLookup(0, HKDIC.dictionary.size(), target);
+               // addListSearch();
+                Word word = HKDIC.dictionaryLookup(target);
                 if(word.getWordExplain().equals("Not found!"))
                     explain_content.setText(word.getWordExplain());
                 else
@@ -186,12 +185,10 @@ public class Controller implements Initializable {
     void addListEdit() {
         String target = input_wordEdit.getText().trim();
         if(!target.isEmpty()) {
-            //Word word = HKDIC.dictionaryLookup(target);
-            Word word = HKDIC.binaryLookup(0, HKDIC.dictionary.size(), target);
+            Word word = HKDIC.dictionaryLookup(target);
             text_spellingEdit.setText(word.getWord_spelling());
             text_explainEdit.setText(word.getWordExplain());
-            //list_searchEdit.getItems().setAll(HKDIC.dictionarySearcher(target));
-            list_searchEdit.getItems().setAll(HKDIC.binarySearcher(0, HKDIC.dictionary.size(), target));
+            list_searchEdit.getItems().setAll(HKDIC.dictionarySearcher(target));
         }
         else{
             list_searchEdit.getItems().clear();
@@ -204,8 +201,7 @@ public class Controller implements Initializable {
     void selectFromListEdit() {
         String target = list_searchEdit.getSelectionModel().getSelectedItem();
         if(target != null) {
-            //Word word = HKDIC.dictionaryLookup(target);
-            Word word = HKDIC.binaryLookup(0, HKDIC.dictionary.size(), target);
+            Word word = HKDIC.dictionaryLookup(target);
             input_wordEdit.setText(target);
             addListEdit();
             text_explainEdit.setText(word.getWordExplain());
@@ -245,8 +241,7 @@ public class Controller implements Initializable {
     void AddListRemove() {
         String target = input_wordRemove.getText().trim();
         if(!target.isEmpty()) {
-            //list_searchRemove.getItems().setAll(HKDIC.dictionarySearcher(target));
-            list_searchRemove.getItems().setAll(HKDIC.binarySearcher(0, HKDIC.dictionary.size(), target));
+            list_searchRemove.getItems().setAll(HKDIC.dictionarySearcher(target));
         }
         else{
             list_searchRemove.getItems().clear();
@@ -284,8 +279,7 @@ public class Controller implements Initializable {
     void SelectFromListFavorite() throws IOException {
         String target = list_fvr.getSelectionModel().getSelectedItem();
         if(target != null) {
-            //Word word = HKDIC.dictionaryLookup(target);
-            Word word = HKDIC.binaryLookup(0, HKDIC.dictionary.size(), target);
+            Word word = HKDIC.dictionaryLookup(target);
             if(!word.getWordExplain().equals("Not found!"))
                 text_explainFvr.setText(word.toString());
             else {
@@ -321,8 +315,7 @@ public class Controller implements Initializable {
     void SelectFromListHistory() throws IOException {
         String target = list_history.getSelectionModel().getSelectedItem();
         if(target != null) {
-            //Word word = HKDIC.dictionaryLookup(target);
-            Word word = HKDIC.binaryLookup(0, HKDIC.dictionary.size(), target);
+            Word word = HKDIC.dictionaryLookup(target);
             if(!word.getWordExplain().equals("Not found!"))
                 text_explainHistory.setText(word.toString());
             else {
@@ -356,7 +349,6 @@ public class Controller implements Initializable {
     }
     //------------------------ End. ----------------------------//
 
-
     public static void  saveData(){
         try {
             HKDIC.dictionaryExportToFile2();
@@ -385,9 +377,8 @@ public class Controller implements Initializable {
 
         btn_fvr.selectedProperty().addListener(((observable, oldValue, newValue) -> {
             String target = input_word.getText();
-            //Word w = HKDIC.dictionaryLookup(target);
-            Word word = HKDIC.binaryLookup(0, HKDIC.dictionary.size(), target);
-            word.setFavor(newValue);
+            Word w = HKDIC.dictionaryLookup(target);
+            w.setFavor(newValue);
             if (newValue) {
                 if (!HKDIC.favor.contains(target)) HKDIC.favor.addFirst(target);
 
