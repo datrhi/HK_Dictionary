@@ -130,13 +130,13 @@ public class DictionaryManagement extends Dictionary {
         FileWriter fw = new FileWriter("data\\history.txt");
         for(String w : history ) fw.write(w+"\n");
         fw.close();
-        fw = new FileWriter("favor.txt");
+        fw = new FileWriter("data\\favor.txt");
         for(String w : favor ) fw.write(w+"\n");
         fw.close();
-        fw = new FileWriter("editedWord.txt");
+        fw = new FileWriter("data\\editedWord.txt");
         for(Word w : editedWord ) fw.write("@" +w.getWordTarget()+" "+w.getWord_spelling()+"\n"+w.getWordExplain()+"\n");
         fw.close();
-        fw = new FileWriter("removedWord.txt");
+        fw = new FileWriter("data\\removedWord.txt");
         for(String w : removedWord ) fw.write(w+"\n");
         fw.close();
     }
