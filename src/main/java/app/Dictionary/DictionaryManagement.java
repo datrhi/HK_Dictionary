@@ -33,8 +33,8 @@ public class DictionaryManagement extends Dictionary {
         if (word_explain.equals("")) return "Type word explain";
         Word w = new Word(word_target,word_explain,word_spelling);
         dictionary.add(w);
-        editedWord.addFirst(w);
-        if (removedWord.contains(w)) removedWord.remove(w);
+        editedWord.add(w);
+        if (removedWord.contains(word_target)) removedWord.remove(word_target);
         return "OK";
     }
 
@@ -104,14 +104,14 @@ public class DictionaryManagement extends Dictionary {
      * @return status kiểu String
      */
     public String dictionaryRemove(String word) {
-        Word w = new Word(word);
+        Word w = dictionaryLookup(word);
         if (word.equals("")) return "Type a word";
         if (!dictionary.contains(w)) return "Not found!";
         dictionary.remove(w);
         removedWord.add(w.getWordTarget());
         if (history.contains(w.getWordTarget())) history.remove(w.getWordTarget());
         if (favor.contains(w.getWordTarget())) favor.remove(w.getWordTarget());
-        if (editedWord.contains(w))editedWord.remove(word);
+        if (editedWord.contains(w)) editedWord.remove(w);
         return "Done!";
     }
 
@@ -225,7 +225,9 @@ public class DictionaryManagement extends Dictionary {
         while (sc.hasNextLine()){
             String target = sc.nextLine();
             if(target.equals("")) break;
-            dictionary.remove(new Word(target));
+            Word word = dictionaryLookup(target);
+            if (editedWord.contains(word)) editedWord.remove(word);
+            dictionary.remove(word);
         }
     }
 
@@ -282,8 +284,8 @@ public class DictionaryManagement extends Dictionary {
         Word w = dictionaryLookup(word_target);
         w.setWordExplain(word_explain);
         w.setWord_spelling(word_spelling);
-        editedWord.addFirst(w);
-        if (removedWord.contains(w)) removedWord.remove(w);
+        editedWord.add(w);
+        if (removedWord.contains(word_target)) removedWord.remove(word_target);
         return "OK";
     }
 
