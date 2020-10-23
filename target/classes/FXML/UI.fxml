@@ -37,11 +37,11 @@
                      <children>
                         <SplitPane dividerPositions="0.3678343949044586" prefHeight="450.0" prefWidth="630.0">
                           <items>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #eaeaea;">
                                  <children>
                                     <VBox prefHeight="448.0" prefWidth="227.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                        <children>
-                                          <Label alignment="CENTER" prefHeight="40.0" prefWidth="227.0" text="Search">
+                                          <Label alignment="CENTER" prefHeight="40.0" prefWidth="227.0" text="Search" textFill="#1f74b0">
                                              <font>
                                                 <Font name="System Bold" size="26.0" />
                                              </font>
@@ -56,9 +56,9 @@
                                     </VBox>
                                  </children>
                               </AnchorPane>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #eaeaea;">
                                  <children>
-                                    <Label layoutX="47.0" layoutY="15.0" text="Definition">
+                                    <Label layoutX="47.0" layoutY="15.0" text="Definition" textFill="#1f74b0">
                                        <font>
                                           <Font name="System Bold" size="26.0" />
                                        </font>
@@ -116,20 +116,20 @@
                           <tabs>
                             <Tab text="Add">
                               <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #eaeaea;">
                                        <children>
-                                          <Label layoutX="103.0" layoutY="60.0" text="Word">
+                                          <Label layoutX="103.0" layoutY="60.0" text="Word" textFill="#1f74b0">
                                              <font>
                                                 <Font name="System Bold" size="19.0" />
                                              </font>
                                           </Label>
-                                          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="213.0" prefHeight="50.0" prefWidth="205.0" text="Add a new word">
+                                          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="213.0" prefHeight="50.0" prefWidth="205.0" text="Add a new word" textFill="#1f74b0">
                                              <font>
                                                 <Font name="System Bold" size="24.0" />
                                              </font>
                                           </Label>
                                           <TextField fx:id="input_wordAdd" layoutX="190.0" layoutY="55.0" prefHeight="37.0" prefWidth="252.0" promptText="Write your word" />
-                                          <Label layoutX="107.0" layoutY="205.0" text="Explain">
+                                          <Label layoutX="107.0" layoutY="205.0" text="Explain" textFill="#1f74b0">
                                              <font>
                                                 <Font name="System Bold" size="19.0" />
                                              </font>
@@ -142,7 +142,7 @@
                                              </font>
                                           </Label>
                                           <Label fx:id="label_stt" layoutX="95.0" layoutY="353.0" prefHeight="33.0" prefWidth="474.0" />
-                                          <Label layoutX="103.0" layoutY="103.0" text="Spelling">
+                                          <Label layoutX="103.0" layoutY="103.0" text="Spelling" textFill="#1f74b0">
                                              <font>
                                                 <Font name="System Bold" size="19.0" />
                                              </font>
@@ -154,9 +154,9 @@
                             </Tab>
                             <Tab text="Remove">
                               <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #eaeaea;">
                                        <children>
-                                          <Label layoutX="227.0" layoutY="14.0" text="Remove a word">
+                                          <Label layoutX="227.0" layoutY="14.0" text="Remove a word" textFill="#1f74b0">
                                              <font>
                                                 <Font name="System Bold" size="24.0" />
                                              </font>
@@ -170,7 +170,7 @@
                                           </Label>
                                           <Label fx:id="label_sttRemove" layoutX="122.0" layoutY="343.0" prefHeight="27.0" prefWidth="339.0" />
                                           <ListView fx:id="list_searchRemove" layoutX="194.0" layoutY="124.0" onMouseClicked="#selectFromListRemove" prefHeight="203.0" prefWidth="241.0" />
-                                          <Label layoutX="128.0" layoutY="87.0" text="Word">
+                                          <Label layoutX="128.0" layoutY="87.0" text="Word" textFill="#1f74b0">
                                              <font>
                                                 <Font name="System Bold" size="19.0" />
                                              </font>
@@ -181,27 +181,27 @@
                             </Tab>
                               <Tab text="Edit">
                                  <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #eaeaea;">
                                        <children>
-                                          <Label layoutX="10.0" layoutY="64.0" text="Word">
+                                          <Label layoutX="10.0" layoutY="64.0" text="Word" textFill="#1f74b0">
                                              <font>
                                                 <Font name="System Bold" size="19.0" />
                                              </font>
                                           </Label>
-                                          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="213.0" prefHeight="50.0" prefWidth="205.0" text="Edit a word">
+                                          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="213.0" prefHeight="50.0" prefWidth="205.0" text="Edit a word" textFill="#1f74b0">
                                              <font>
                                                 <Font name="System Bold" size="24.0" />
                                              </font>
                                           </Label>
                                           <TextField fx:id="input_wordEdit" layoutX="67.0" layoutY="58.0" onKeyReleased="#addListEdit" prefHeight="37.0" prefWidth="180.0" promptText="Write your word" />
-                                          <Label layoutX="551.0" layoutY="177.0" text="Explain">
+                                          <Label layoutX="551.0" layoutY="177.0" text="Explain" textFill="#1f74b0">
                                              <font>
                                                 <Font name="System Bold" size="19.0" />
                                              </font>
                                           </Label>
                                           <TextArea fx:id="text_explainEdit" layoutX="258.0" layoutY="99.0" prefHeight="253.0" prefWidth="281.0" promptText="What does it mean?" />
                                           <Button fx:id="btn_saveEdit" layoutX="551.0" layoutY="321.0" mnemonicParsing="false" onAction="#EditWord" text="Save" />
-                                          <Label layoutX="547.0" layoutY="65.0" text="Spelling">
+                                          <Label layoutX="547.0" layoutY="65.0" text="Spelling" textFill="#1f74b0">
                                              <font>
                                                 <Font name="System Bold" size="19.0" />
                                              </font>
@@ -233,7 +233,7 @@
             </Tab>
             <Tab fx:id="tab_history" onSelectionChanged="#addHistory">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #eaeaea;">
                      <children>
                         <ListView fx:id="list_history" layoutX="5.0" layoutY="6.0" onMouseClicked="#SelectFromListHistory" prefHeight="440.0" prefWidth="204.0" />
                         <TextArea fx:id="text_explainHistory" layoutX="214.0" layoutY="5.0" prefHeight="440.0" prefWidth="415.0" />
@@ -249,7 +249,7 @@
             </Tab>
             <Tab fx:id="tab_fvr" onSelectionChanged="#addFavorite">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #eaeaea;">
                      <children>
                         <ListView fx:id="list_fvr" layoutX="5.0" layoutY="4.0" onMouseClicked="#SelectFromListFavorite" prefHeight="440.0" prefWidth="201.0" />
                         <TextArea fx:id="text_explainFvr" layoutX="210.0" layoutY="4.0" prefHeight="440.0" prefWidth="418.0" />
