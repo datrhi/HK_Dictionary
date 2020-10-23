@@ -1,10 +1,7 @@
 package app.Dictionary;
 
-import com.sun.deploy.association.Action;
-
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 import java.util.TreeSet;
 
@@ -42,6 +39,52 @@ public class DictionaryCommandline extends DictionaryManagement {
         return listSearch;
     }
 
+
+    /**   Tim cac tu tuong tu dung tim kiem nhi phan.
+     *
+     * @param word từ tiếng anh
+     * @return arraylist các từ tương tự
+     */
+    public ArrayList<String> binarySearcher(int start, int end, String word) {
+        word = word.trim();
+        ArrayList<Word> WordArray = new ArrayList<Word> (dictionary);
+        ArrayList<String> similarWord = new ArrayList<String>();
+        if(start > end) {
+            return new ArrayList<>();
+        }
+        int mid = start + (end - start) / 2;
+        String midWord = WordArray.get(mid).getWordTarget();
+        if (midWord.startsWith(word)) {
+            similarWord.add(WordArray.get(mid).getWordTarget());
+
+            int left = mid - 1;
+            int right = mid + 1;
+
+            while(left >= 0) {
+                String leftWord = WordArray.get(left).getWordTarget();
+                if (leftWord.startsWith(word)) {
+                    similarWord.add(leftWord);
+                    left--;
+                }
+                else
+                    break;
+            }
+
+            while(right <= WordArray.size()-1) {
+                String rightWord = WordArray.get(right).getWordTarget();
+                if (rightWord.startsWith(word)) {
+                    similarWord.add(rightWord);
+                    right++;
+                }
+                else
+                    break;
+            }
+            return similarWord;
+        }
+        int compare = word.compareToIgnoreCase(midWord);
+        if (compare < 0) return binarySearcher(start, mid - 1, word);
+        return binarySearcher(mid + 1, end, word);
+    }
 
 
     public static void instruction()

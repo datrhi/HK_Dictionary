@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.TreeSet;
@@ -95,6 +96,30 @@ public class DictionaryManagement extends Dictionary {
             if (s.getWordTarget().equals(word)) return s;
         }
         return new Word(word, "Not found!");
+    }
+
+
+    /**    Tìm kiếm chính xác từ muốn kiếm băng tìm kiếm nhị phân
+     *
+     * @param word là tu tiếng anh muốn tìm kiểu String
+     * @return từ muốn tìm kiểu Word
+     */
+    public Word binaryLookup(int start, int end, String word) {
+
+        word = word.trim();
+        ArrayList<Word> WordArray = new ArrayList<> (dictionary);
+        if(end < start) {
+            return new Word(word,"Not found!");
+        }
+        int mid = start + (end - start) / 2;
+        int compare = word.compareToIgnoreCase(WordArray.get(mid).getWordTarget());
+        if(compare == 0) {
+            return WordArray.get(mid);
+        }
+        if(compare < 0) {
+            return binaryLookup(start,mid-1,word);
+        }
+        return binaryLookup(mid+1,end,word);
     }
 
 
