@@ -23,10 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd8b16cf-5e9e-443b-b4f5-3f35e9e180cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaris(copy).txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Dictionary/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Dictionary/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Dictionary/DictionaryManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/Controller/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Controller/Controller$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/Controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Controller/Controller.class" afterDir="false" />
     </list>
@@ -72,7 +74,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/freetts-1.2.2-bin/freetts-1.2/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -167,25 +169,25 @@
     </state>
     <state x="510" y="187" key="FileChooserDialogImpl/0.0.1458.864@0.0.1458.864" timestamp="1603287700552" />
     <state x="537" y="181" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1603269190513" />
-    <state width="1493" height="190" key="GridCell.Tab.0.bottom" timestamp="1603347824789">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1415" height="155" key="GridCell.Tab.0.bottom" timestamp="1603453732066">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="150" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1603290019382" />
+    <state width="1415" height="155" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1603453732066" />
     <state width="1493" height="190" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1603347824789" />
-    <state width="1493" height="190" key="GridCell.Tab.0.center" timestamp="1603347824789">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1415" height="155" key="GridCell.Tab.0.center" timestamp="1603453732066">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="150" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1603290019382" />
+    <state width="1415" height="155" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1603453732066" />
     <state width="1493" height="190" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1603347824789" />
-    <state width="1493" height="190" key="GridCell.Tab.0.left" timestamp="1603347824789">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1415" height="155" key="GridCell.Tab.0.left" timestamp="1603453732066">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="150" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1603290019382" />
+    <state width="1415" height="155" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1603453732066" />
     <state width="1493" height="190" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1603347824789" />
-    <state width="1493" height="190" key="GridCell.Tab.0.right" timestamp="1603347824789">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1415" height="155" key="GridCell.Tab.0.right" timestamp="1603453732066">
+      <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1415" height="150" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1603290019382" />
+    <state width="1415" height="155" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1603453732066" />
     <state width="1493" height="190" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1603347824789" />
     <state x="260" y="87" key="Maven.ArtifactSearchDialog" timestamp="1603289504669">
       <screen x="0" y="0" width="1458" height="864" />

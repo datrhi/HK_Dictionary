@@ -5,14 +5,14 @@ package app.Dictionary;
 //import java.io.IOException;
 //import java.io.PrintWriter;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-
-import java.nio.charset.Charset;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.util.*;
 import java.nio.file.Paths;
-import java.io.*;
+import java.util.Iterator;
+import java.util.Scanner;
 import java.util.TreeSet;
 
 
@@ -33,6 +33,7 @@ public class DictionaryManagement extends Dictionary {
         if (word_explain.equals("")) return "Type word explain";
         Word w = new Word(word_target,word_explain,word_spelling);
         dictionary.add(w);
+        editedWord.addFirst(w);
         if (removedWord.contains(w)) removedWord.remove(w);
         return "OK";
     }
@@ -84,7 +85,7 @@ public class DictionaryManagement extends Dictionary {
      * @param word là tu tiếng anh muốn tìm kiểu String
      * @return từ muốn tìm kiểu Word
      */
-    public Word dictionaryLookup(String word) {
+    public static Word dictionaryLookup(String word) {
         word = word.trim();
         Word w = new Word(word);
         TreeSet<Word> listWord = (TreeSet<Word>) dictionary.subSet(w, new Word(word + "z"));
@@ -110,6 +111,7 @@ public class DictionaryManagement extends Dictionary {
         removedWord.add(w.getWordTarget());
         if (history.contains(w.getWordTarget())) history.remove(w.getWordTarget());
         if (favor.contains(w.getWordTarget())) favor.remove(w.getWordTarget());
+        if (editedWord.contains(w))editedWord.remove(word);
         return "Done!";
     }
 
@@ -124,12 +126,27 @@ public class DictionaryManagement extends Dictionary {
         fw.close();
     }
 
+    public void dictionaryExportToFile2() throws IOException {
+        FileWriter fw = new FileWriter("history.txt");
+        for(String w : history ) fw.write(w+"\n");
+        fw.close();
+        fw = new FileWriter("favor.txt");
+        for(String w : favor ) fw.write(w+"\n");
+        fw.close();
+        fw = new FileWriter("editedWord.txt");
+        for(Word w : editedWord ) fw.write("@" +w.getWordTarget()+" "+w.getWord_spelling()+"\n"+w.getWordExplain()+"\n");
+        fw.close();
+        fw = new FileWriter("removedWord.txt");
+        for(String w : removedWord ) fw.write(w+"\n");
+        fw.close();
+    }
+
 
     /**   Insert từ điển từ file.
      *
      * @throws IOException
      */
-    public void insertFromFile2() throws IOException {
+    public static void insertFromFile2() throws IOException {
         try {
             String file = new String(Files.readAllBytes(Paths.get("AnhViet.txt")), StandardCharsets.UTF_8);
             String[] word = file.split("@");
@@ -153,6 +170,62 @@ public class DictionaryManagement extends Dictionary {
         }
         catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void insertFromFile3() throws IOException
+    {
+        try {
+            String file = new String(Files.readAllBytes(Paths.get("editedWord.txt")), StandardCharsets.UTF_8);
+            String[] word = file.split("@");
+            for (String w : word) {
+                String list[] = w.split("\r?\n", 2);
+                if (list.length > 1) {
+                    String word_explain = new String();
+                    String word_target = new String();
+                    String word_spelling = new String();
+                    if (list[0].contains("/")) {
+                        word_target = list[0].substring(0, list[0].indexOf("/"));
+                        word_spelling = list[0].substring(list[0].indexOf("/"), list[0].length());
+                    } else {
+                        word_target = list[0];
+                        word_spelling = "";
+                    }
+                    word_explain = list[1];
+                    editedWord.add(new Word(word_target.trim(),word_explain.trim(),word_spelling.trim()));
+                    dictionary.add(new Word(word_target.trim(),word_explain.trim(),word_spelling.trim()));
+                }
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scanner sc = null;
+        insertFromFile2();
+        File file = new File("favor.txt");
+        sc = new Scanner(file);
+        while (sc.hasNextLine()){
+            String target = sc.nextLine();
+            if(target.equals("")) break;
+            favor.add(target);
+            Word word = dictionaryLookup(target);
+            word.setFavor(true);
+            dictionary.remove(word);
+            dictionary.add(word);
+        }
+        file = new File("history.txt");
+        sc = new Scanner(file);
+        while (sc.hasNextLine()){
+            String target = sc.nextLine();
+            if(target.equals("")) break;
+            history.add(target);
+        }
+        file = new File("removedWord.txt");
+        sc = new Scanner(file);
+        while (sc.hasNextLine()){
+            String target = sc.nextLine();
+            if(target.equals("")) break;
+            dictionary.remove(new Word(target));
         }
     }
 
@@ -209,6 +282,7 @@ public class DictionaryManagement extends Dictionary {
         Word w = dictionaryLookup(word_target);
         w.setWordExplain(word_explain);
         w.setWord_spelling(word_spelling);
+        editedWord.addFirst(w);
         if (removedWord.contains(w)) removedWord.remove(w);
         return "OK";
     }

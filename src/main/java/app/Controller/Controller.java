@@ -349,6 +349,13 @@ public class Controller implements Initializable {
     }
     //------------------------ End. ----------------------------//
 
+    public static void  saveData(){
+        try {
+            HKDIC.dictionaryExportToFile2();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -363,7 +370,7 @@ public class Controller implements Initializable {
         }
 
         try {
-            HKDIC.insertFromFile2();
+            HKDIC.insertFromFile3();
         } catch (IOException e) {
             e.printStackTrace();
         }

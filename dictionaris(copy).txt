@@ -1,8 +1,0 @@
-book        sach
-bye         tam biet
-computer    may tinh
-hello       xin chao
-jumasd      unknown
-jumc        unknown
-jump        nhay
-jumpqerew   unknwon

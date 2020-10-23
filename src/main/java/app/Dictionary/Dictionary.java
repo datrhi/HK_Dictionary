@@ -1,8 +1,7 @@
 package app.Dictionary;
 
-import java.util.ArrayList;
-import java.util.TreeSet;
 import java.util.LinkedList;
+import java.util.TreeSet;
 
 public class Dictionary extends TreeSet<Word> {
 
@@ -14,6 +13,7 @@ public class Dictionary extends TreeSet<Word> {
 
     public static LinkedList<String> removedWord = new LinkedList<String>();
 
+    public static LinkedList<Word> editedWord = new LinkedList<Word>();
     // public void add
 
 }
