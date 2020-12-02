@@ -67,7 +67,7 @@ public class DictionaryManagement extends Dictionary {
         }
     }
 
-
+    /*
     public void insertFromFile1() throws IOException {
         File file = new File("dictionaries.txt");
         Scanner read_file = new Scanner(file);
@@ -77,7 +77,7 @@ public class DictionaryManagement extends Dictionary {
             dictionary.add(w);
         }
         read_file.close();
-    }
+    }*/
 
 
     /**    Tìm kiếm chính xác từ muốn kiếm
@@ -232,12 +232,13 @@ public class DictionaryManagement extends Dictionary {
     }
 
 
-    /**   Edit một Word trong từ điển.
+
+    /*   Edit một Word trong từ điển.
      *
      * @param word_target tư tiếng anh
      * @param word_explain nghia tieng viet
      * @param word_spelling cacn danh van
-     */
+
     public void dictionaryEdit(String word_target, String word_explain, String word_spelling) {
         word_target = word_target.trim();
         word_explain = word_explain.trim();
@@ -252,7 +253,9 @@ public class DictionaryManagement extends Dictionary {
             }
         }
     }
+    */
 
+    /*
     public String dictionaryEdit(String word_target, String word_explain) {
         word_target = word_target.trim();
         word_explain = word_explain.trim();
@@ -266,7 +269,7 @@ public class DictionaryManagement extends Dictionary {
             }
         }
         return word.toString();
-    }
+    }*/
 
 
     /**   Edit một Word trong tu dien.
